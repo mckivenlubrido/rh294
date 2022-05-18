@@ -1,0 +1,52 @@
+ANSIBLE
+=======
+
+Syntax:
+=======
+	ansible --version|--help
+	ansible [-i INVENTORY] [-v] --list-hosts HOST_PATTERN
+	ansible [-i INVENTORY] HOST_PATTERN [-m MODULE] {-a "<ARGS>..."} [-b] [-k] [-u REMOTE_USER] [--become-method su|sudo|enable|runas] [-K] [--become-user USER] [-f FORKS] [-v]
+	
+		Eg. ansible -i myinventory servera -m yum -a "name=httpd state=latest"
+
+	
+	ansible-playbook [-i INVENTORY] [-b] [-k] [-u REMOTE_USER] [--become-method su|sudo|enable|runas] [-K] [--become-user USER] [-f FORKS] [-v] [--syntax-check] [-C] [--list-tasks] PLAYBOOK
+
+	ansible-inventory [-i INVENTORY] [--graph|--list] [-y]
+
+	ansible-doc [-t TYPE] -l|MODULE_NAME
+	
+		Eg. ansible-doc -t connection -l
+		    ansible-doc -t callback -l
+		    ansible-doc yum
+
+	ansible-vault create|edit|encrypt|decrypt|view|rekey [--vault-password-file PASSFILE] FILENAME
+
+	ansible-galaxy init|install ROLE_NAME
+
+Config
+======
+	Precedence
+	----------
+	1. ANSIBLE_CONFIG 			# environment variable, file name anything ref by var.
+	2. ./ansible.cfg			# current directory, file name ansible.cfg
+	3. ~/.ansible.cfg			# home directory, file name .ansible.cfg
+	4. /etc/ansible/ansible.cfg		# default
+
+	ansible.cfg
+	-----------
+	[defaults]
+	inventory         = <PATH>
+	remote_user       = devops
+	ask_pass          = true|False
+	host_key_checking = True|false
+	gathering         = Implicit|true|false|explicit
+	forks             = FORK
+
+	[privilege_escalation]
+	become          = true|False
+	become_user     = root
+	become_ask_pass = true|False
+	become_method   = su|sudo|enable|runas	# *nix - su,sudo; win - runas; ntdev - enable
+
+
