@@ -81,7 +81,39 @@ Magic Variables
 	inventory_hostname	# the inventory host name
 	group_names		# groups the inventory host belong to
 	groups			# all groups of the inventory as well as their members
-	hostvars
+	hostvars		# all inventory variables
+
+		Eg.
+		Assuming you're inside servera now, to refer to it's own groups magic var:
+			hostvars.servera.groups OR
+			hostvars['servera'].['groups'] OR
+			groups
+		Structure of hostvars is as below:
+
+		hostvars:
+			servera:
+				inventory_hostname: servera	# each host has it's magic var
+				group_names:
+					- webservers
+					- nodes
+				groups:
+					all:
+						- monkey
+						- servera
+						- serverb
+					nodes:
+						- servera
+						- serverb
+					webservers:
+						- servera
+					dbservers:
+						- serverb
+					ungrouped:
+						- monkey
+				ansible_facts: {}
+			serverb:
+				inventory_hostname: serverb
+				...
 	
 	
 
