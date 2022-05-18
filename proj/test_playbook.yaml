@@ -1,0 +1,25 @@
+---                                     # start of yaml (optional)
+- name: Play 1
+  hosts:
+    - servera
+    - serverb
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Task 1
+      debug:
+        msg: This is task 1
+
+    - name: Task 2 install httpd
+      yum:
+        name: httpd
+        state: latest
+
+- name: Play 2
+  hosts: nodes
+  tasks:
+    - name: Task in play 2
+      debug:
+        msg: Hello World
+...                                     # end of yaml (optional)

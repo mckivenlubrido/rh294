@@ -1,0 +1,26 @@
+---
+- name: Testing Variables
+  hosts: localhost
+  vars:
+    value1: Hello World
+    message: 123
+  tasks:
+    - name: T1 {{ value1 }}
+      debug:
+        msg: Task 1 with message as {{ message }}
+
+    - name: Include variables from file
+      include_vars: data.yaml
+
+    - name: T2
+      vars:
+        message: TASK LEVEL VARIABLE
+      debug:
+        msg: message in T2 is {{ message }}
+
+    - name: T3
+      debug:
+        msg:
+          - message in T3 is {{ message }}
+          - address is {{ address }}
+...

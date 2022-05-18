@@ -5,12 +5,16 @@ Syntax:
 =======
 	ansible --version|--help
 	ansible [-i INVENTORY] [-v] --list-hosts HOST_PATTERN
-	ansible [-i INVENTORY] HOST_PATTERN [-m MODULE] {-a "<ARGS>..."} [-b] [-k] [-u REMOTE_USER] [--become-method su|sudo|enable|runas] [-K] [--become-user USER] [-f FORKS] [-v]
+	ansible [-i INVENTORY] HOST_PATTERN [-m MODULE] {-a "<ARGS>..."} [-b] [-k] [-u REMOTE_USER] \
+		[--become-method su|sudo|enable|runas] [-K] [--become-user USER] [-f FORKS] [-v] \
+		[-e <VAR>=<VALUE>]...
 	
 		Eg. ansible -i myinventory servera -m yum -a "name=httpd state=latest"
 
 	
-	ansible-playbook [-i INVENTORY] [-b] [-k] [-u REMOTE_USER] [--become-method su|sudo|enable|runas] [-K] [--become-user USER] [-f FORKS] [-v] [--syntax-check] [-C] [--list-tasks] PLAYBOOK
+	ansible-playbook [-i INVENTORY] [-b] [-k] [-u REMOTE_USER] \
+		[--become-method su|sudo|enable|runas] [-K] [--become-user USER] [-f FORKS] \
+		[-v] [--syntax-check] [-C] [--list-tasks] [-e <VAR>=<VALUE>]... PLAYBOOK
 
 	ansible-inventory [-i INVENTORY] [--graph|--list] [-y]
 
@@ -48,5 +52,29 @@ Config
 	become_user     = root
 	become_ask_pass = true|False
 	become_method   = su|sudo|enable|runas	# *nix - su,sudo; win - runas; ntdev - enable
+
+Variables - Scope & precedence
+==============================
+      Precedence                        Scope                          Validity
+      ----------                        -----                          --------
+GLOBAL                                                                 per playbook
+      - Cmd line options (-e)           PLAYBOOK
+      - Config                          PLAYBOOK
+PLAYBOOK                                                               per play
+      - include_vars module in tasks    PLAY (from the module declaration onwards)
+      - vars under tasks                TASK
+      - vars_files under play           PLAY
+      - vars under play                 PLAY
+HOST                                                                   per host
+      - host_vars in project            PLAYBOOK
+      - group_vars in project           PLAYBOOK
+      - host_var in inventory           PLAYBOOK
+      - group_vars in inventory         PLAYBOOK
+
+Where SCOPE,
+  PLAYBOOK = variables can be used anywhere in Playbook
+  PLAY     = variables can only be used in PLAY where it is declared
+  TASK     = variables can only be used in the TASK where it is declared
+
 
 

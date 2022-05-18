@@ -1,0 +1,12 @@
+address: |
+  1, Jalan 2,
+  Taman abc,
+  12345, mycountry.
+
+long_line: >
+  one two
+  three four five
+  six seven
+  eight
+
+message: IN VARS FILE
