@@ -1,0 +1,16 @@
+---
+- name: Testing hostvars
+  hosts: servera
+  tasks:
+    - name: hostvars
+      debug:
+        var: hostvars
+
+    - name: playbook_dir variable
+      debug:
+        var: playbook_dir
+
+    - name: making use of hostvars to retrieve info from other inventory element
+      debug:
+        msg: serverb belongs to these groups {{ hostvars.serverb.group_names }}
+#        msg: serverb belongs to these groups {{ hostvars['serverb']['group_names'] }}

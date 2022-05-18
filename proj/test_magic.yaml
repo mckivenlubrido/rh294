@@ -1,0 +1,19 @@
+---
+- name: Testing Magic Variables
+  hosts:
+    - servera
+    - serverc
+    - hacked
+  tasks:
+    - name: inventory_hostname
+      debug:
+        msg: You are now in {{ inventory_hostname }}
+
+    - name: group_names
+      debug:
+        msg: "{{ inventory_hostname }} belongs to {{ group_names }}"
+
+    - name: groups
+      debug:
+        msg: The inventory contains all these groups {{ groups }}
+...

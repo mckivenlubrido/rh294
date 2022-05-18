@@ -1,0 +1,7 @@
+hacked			value1=hahahaha
+
+[another_group]
+servera
+
+[another_group:vars]
+value1=testing

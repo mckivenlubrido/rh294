@@ -1,0 +1,82 @@
+localhost | SUCCESS => {
+    "hostvars": {
+        "servera": {
+            "ansible_check_mode": false,
+            "ansible_diff_mode": false,
+            "ansible_facts": {},
+            "ansible_forks": 5,
+            "ansible_inventory_sources": [
+                "/home/student/notes/proj/test_hostvars/hosts"
+            ],
+            "ansible_playbook_python": "/usr/libexec/platform-python",
+            "ansible_verbosity": 0,
+            "ansible_version": {
+                "full": "2.9.21",
+                "major": 2,
+                "minor": 9,
+                "revision": 21,
+                "string": "2.9.21"
+            },
+            "group_names": [
+                "ungrouped"
+            ],
+            "groups": {
+                "all": [
+                    "servera",
+                    "serverb"
+                ],
+                "my_group": [
+                    "serverb"
+                ],
+                "ungrouped": [
+                    "servera"
+                ]
+            },
+            "inventory_dir": "/home/student/notes/proj/test_hostvars",
+            "inventory_file": "/home/student/notes/proj/test_hostvars/hosts",
+            "inventory_hostname": "servera",
+            "inventory_hostname_short": "servera",
+            "omit": "__omit_place_holder__c20a937fe55207dc9f837180ee3e64f4ce0d2a46",
+            "playbook_dir": "/home/student/notes/proj/test_hostvars"
+        },
+        "serverb": {
+            "ansible_check_mode": false,
+            "ansible_diff_mode": false,
+            "ansible_facts": {},
+            "ansible_forks": 5,
+            "ansible_inventory_sources": [
+                "/home/student/notes/proj/test_hostvars/hosts"
+            ],
+            "ansible_playbook_python": "/usr/libexec/platform-python",
+            "ansible_verbosity": 0,
+            "ansible_version": {
+                "full": "2.9.21",
+                "major": 2,
+                "minor": 9,
+                "revision": 21,
+                "string": "2.9.21"
+            },
+            "group_names": [
+                "my_group"
+            ],
+            "groups": {
+                "all": [
+                    "servera",
+                    "serverb"
+                ],
+                "my_group": [
+                    "serverb"
+                ],
+                "ungrouped": [
+                    "servera"
+                ]
+            },
+            "inventory_dir": "/home/student/notes/proj/test_hostvars",
+            "inventory_file": "/home/student/notes/proj/test_hostvars/hosts",
+            "inventory_hostname": "serverb",
+            "inventory_hostname_short": "serverb",
+            "omit": "__omit_place_holder__c20a937fe55207dc9f837180ee3e64f4ce0d2a46",
+            "playbook_dir": "/home/student/notes/proj/test_hostvars"
+        }
+    }
+}

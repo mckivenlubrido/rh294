@@ -55,26 +55,33 @@ Config
 
 Variables - Scope & precedence
 ==============================
-      Precedence                        Scope                          Validity
-      ----------                        -----                          --------
-GLOBAL                                                                 per playbook
-      - Cmd line options (-e)           PLAYBOOK
-      - Config                          PLAYBOOK
-PLAYBOOK                                                               per play
-      - include_vars module in tasks    PLAY (from the module declaration onwards)
-      - vars under tasks                TASK
-      - vars_files under play           PLAY
-      - vars under play                 PLAY
-HOST                                                                   per host
-      - host_vars in project            PLAYBOOK
-      - group_vars in project           PLAYBOOK
-      - host_var in inventory           PLAYBOOK
-      - group_vars in inventory         PLAYBOOK
+	      Precedence                        Scope                          Validity
+	      ----------                        -----                          --------
+	GLOBAL                                                                 per playbook
+	      - Cmd line options (-e)           PLAYBOOK
+	      - Config                          PLAYBOOK
+	PLAYBOOK                                                               per play
+	      - include_vars module in tasks    PLAY (from the module declaration onwards)
+	      - vars under tasks                TASK
+	      - vars_files under play           PLAY
+	      - vars under play                 PLAY
+	HOST                                                                   per host
+	      - host_vars in project            PLAYBOOK
+	      - group_vars in project           PLAYBOOK
+	      - host_var in inventory           PLAYBOOK
+	      - group_vars in inventory         PLAYBOOK
+	
+	Where SCOPE,
+	  PLAYBOOK = variables can be used anywhere in Playbook
+	  PLAY     = variables can only be used in PLAY where it is declared
+	  TASK     = variables can only be used in the TASK where it is declared
 
-Where SCOPE,
-  PLAYBOOK = variables can be used anywhere in Playbook
-  PLAY     = variables can only be used in PLAY where it is declared
-  TASK     = variables can only be used in the TASK where it is declared
-
-
+Magic Variables
+===============
+	inventory_hostname	# the inventory host name
+	group_names		# groups the inventory host belong to
+	groups			# all groups of the inventory as well as their members
+	hostvars
+	
+	
 
