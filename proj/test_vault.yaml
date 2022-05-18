@@ -1,0 +1,20 @@
+---
+- name: Testing Vault
+  hosts: localhost
+  vars_files:
+    - vars/secret
+  tasks:
+    - name: T1
+      debug:
+        msg:
+         - username is {{ username }}
+         - password is {{ password }}
+
+    - name: T2
+      debug:
+        msg: Task 2
+
+    - name: T3
+      debug:
+        msg: Task 3
+...

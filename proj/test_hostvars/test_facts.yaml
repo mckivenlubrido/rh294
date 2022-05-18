@@ -1,0 +1,41 @@
+---
+- name: Testing Facts
+  hosts:
+    - fish
+    - serverb
+  tasks:
+    - name: T1
+      debug:
+        msg:
+          - inventory_hostname is {{ inventory_hostname }}
+          - ansible_fqdn is {{ ansible_fqdn }}
+          - new method of facts referencing {{ ansible_facts['fqdn'] }}
+
+    - name: Create a new fact for {{ inventory_hostname }}
+      vars:
+        value1: 1000
+      set_fact:
+        whatever: you want on {{ ansible_fqdn }}
+
+    - name: display fact
+      debug:
+        msg: whatever variable holds the value {{ whatever }}
+
+    - name: Change it
+      set_fact:
+        whatever: 123
+
+    - name: display fact
+      debug:
+        msg: whatever variable holds the value {{ whatever }}
+
+
+
+#    - name: facts of servera
+#      debug:
+#        var: hostvars.servera
+
+#    - name: facts of fish
+#      debug:
+#        var: hostvars.fish
+...

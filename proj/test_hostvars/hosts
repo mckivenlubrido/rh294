@@ -1,4 +1,5 @@
 servera
+fish		ansible_host=servera
 
 [my_group]
 serverb
