@@ -1,8 +1,8 @@
 ANSIBLE
 =======
 
-Syntax:
-=======
+Command Syntax:
+===============
 	ansible --version|--help
 	ansible [-i INVENTORY] [-v] --list-hosts HOST_PATTERN
 	ansible [-i INVENTORY] HOST_PATTERN [-m MODULE] {-a "<ARGS>..."} [-b] [-k] [-u REMOTE_USER] \
@@ -37,21 +37,28 @@ Config
 	3. ~/.ansible.cfg			# home directory, file name .ansible.cfg
 	4. /etc/ansible/ansible.cfg		# default
 
-	ansible.cfg
-	-----------
+	Sample ansible.cfg
+	------------------
 	[defaults]
-	inventory         = <PATH>
+	inventory         = ./hosts
+	roles_path        = ./roles
+	log_path          = ./logs/report.log
 	remote_user       = devops
-	ask_pass          = true|False
-	host_key_checking = True|false
-	gathering         = Implicit|true|false|explicit
-	forks             = FORK
+	ask_pass          = False		# true|False
+	host_key_checking = False		# True|false
+	gathering         = smart		# Smart|implicit|explicit
+						# Refer to /etc/ansible/ansible.cfg
+	forks             = 5
+	transport	  = smart		# Smart|network_cli. TIP: use play level or host vars to set instead
+	retry_files_enabled = False		# true|False(default in 2.9)
+	stdout_callback   = yaml		# formats output. ansible-doc -t callback -l
 
 	[privilege_escalation]
-	become          = true|False
+	become          = False			# true|False
 	become_user     = root
-	become_ask_pass = true|False
+	become_ask_pass = False			# true|False
 	become_method   = su|sudo|enable|runas	# *nix - su,sudo; win - runas; ntdev - enable
+						# ansible-doc -t become -l
 
 Variables - Scope & precedence
 ==============================
@@ -75,6 +82,24 @@ Variables - Scope & precedence
 	  PLAYBOOK = variables can be used anywhere in Playbook
 	  PLAY     = variables can only be used in PLAY where it is declared
 	  TASK     = variables can only be used in the TASK where it is declared
+
+	{group,host}_vars directories to hold variables for group/host
+			  filenames would follow the group/host names.
+
+Important Variables
+===================
+	ansible_user: <USERNAME>
+	ansible_password: <PASSWORD>
+	ansible_become: true|FALSE
+	ansible_become_method: enable|sudo|su|runas     # enable - ntwk dev, sudo/su - *nix(linux/unix), runas - win
+	ansible_host: <IP ADDRESS|FQDN>
+	
+	Network Devices
+	---------------
+	ansible_connection: network_cli|netconf         # transport=network_cli in defaults section of ansible.cfg OR
+							# connection in play level OR ansible_connection in host vars.
+	ansible_network_os: ios|vyos|eos|...
+
 
 Magic Variables
 ===============
@@ -114,6 +139,78 @@ Magic Variables
 			serverb:
 				inventory_hostname: serverb
 				...
-	
-	
 
+Playbook Syntax
+===============
+	---                               # start of YAML (optional)
+	- name: <PLAY_NAME>
+	  hosts: <HOSTS_LIST>
+	  become: true|FALSE              # precedence: play overrides ansible.cfg
+	  gather_facts: TRUE|false        # normally when dealing with network devices set this to FALSE
+	  ignore_errors: true|FALSE       # not advisable
+	  force_handlers: true|FALSE
+	  connection: <PLUGIN>            # overrides transport in default section of ansible.cfg
+	  serial: <NUM_OF_HOSTS>          # number of hosts to run per play
+	  vars:
+	    <KEY>: <VALUE>
+	  vars_files:
+	    - <FILE_LIST>                 # higher priority over the vars
+	  pre_tasks:
+	    - name: <TASK NAME>
+	      <SAME-AS-TASK-SECTION>
+	  roles:
+	    - <ROLE_NAME>
+	    - role: <ROLE_NAME>           # can be written as
+	      <KEY>: <VALUE>              # - { role: <ROLE_NAME>, <VAR>: <VALUE>, ...}
+	  tasks:
+	    - name: <TASK_NAME>                 ────┐
+	      vars:                                 │
+		<VAR>: <VALUE>                      │
+	      <MODULE>:                             │   # 1 task CAN ONLY USE 1 MODULE
+		<MODULE_OPT>: <VALUE>               │
+	      register: <VARIABLE>                  │
+	      ignore_errors: true|FALSE             │<TASK-SECTION>
+	      when: <CONDITION_LIST>                │
+	      failed_when: <CONDITION_LIST>         │
+	      changed_when: <CONDITION_LIST>        │
+	      loop: <CONDITION_LIST>                │
+	      notify: <HANDLER_LIST>                │
+	      delegate_to: <HOST_NAME>              │
+	      delegate_facts: true|FALSE            │
+	      tags: <TAG_LIST>                  ────┘
+
+	    - block:                            ────┐
+		- name: <TASK_NAME>                 │
+		  <SAME-AS-TASK-SECTION>            │
+	      rescue:                               │
+		- name: <TASK_NAME>                 │
+		  <SAME-AS-TASK-SECTION>            │<BLOCK-SECTION>
+	      always:                               │
+		- name: <TASK_NAME>                 │
+		  <SAME-AS-TASK-SECTION>            │
+	      when: <CONDITION_LIST>            ────┘ # block can only use conditions but not loop
+
+	    - name: <TASK NAME>
+	      <SAME-AS-TASK-SECTION>
+
+	  post_tasks:
+	    - name: <TASK NAME>
+	      <SAME-AS-TASK-SECTION>
+
+	  handlers:
+	    - name: <HANDLER_NAME>
+	      <SAME-AS-TASK-SECTION>
+
+	- name: <PLAY NAME>
+	  hosts: <HOSTS_LIST>
+	...                               # end of YAML (optional)
+	
+Extras
+======
+	Ansible Config Settings - https://docs.ansible.com/ansible/latest/reference_appendices/config.html
+	Playbook Keywords - https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html
+	Playbook Filters  - https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html
+
+vi settings
+===========
+	autocmd FileType yaml setlocal ai ts=2 et sw=2 sts=2 colorcolumn=3,5 nu
