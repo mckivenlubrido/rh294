@@ -1,0 +1,52 @@
+---
+- name: Testing Handlers
+  hosts: dbservers                  # try with localhost and dbservers
+  #force_handlers: true
+  tasks:
+    - name: T1
+      debug:
+        msg: Task 1
+      changed_when: true
+      notify:
+        - H3
+        - handler 1
+
+#    - name: forcing handlers to execute
+#      meta: flush_handlers
+
+    - name: T2
+      debug:
+        msg: Task 2
+      changed_when: true
+      #ignore_errors: true
+      failed_when: inventory_hostname == 'serverd'    # try: set to true when localhost
+      notify:
+        - my handler 2
+
+    - name: T3
+      debug:
+        msg: Task 3
+      changed_when: true
+      notify:
+        - handler 1
+
+  handlers:
+    - name: handler 1
+      debug:
+        msg: Handler 1
+
+    - name: my handler 2
+      debug:
+        msg: Handler 2
+
+    - name: H3
+      debug:
+        msg: Handler 3
+
+- name: Play2
+  hosts: servera
+  tasks:
+    - name: hello
+      debug:
+        msg: Hello World
+...

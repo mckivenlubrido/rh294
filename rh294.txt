@@ -204,6 +204,31 @@ Playbook Syntax
 	- name: <PLAY NAME>
 	  hosts: <HOSTS_LIST>
 	...                               # end of YAML (optional)
+
+HANDLERS
+========
+	RULES
+	-----
+	Handlers will only execute:
+		1. The task that notified the handler has a status of "changed"
+		2. In the order defined, and not the notified order.
+		3. Once regardless of how many times it was notified.
+		4. After ALL TASKS have completed for the PLAY.
+		      EXCEPTION - force_handlers: true
+		      EXCEPTION - calling to meta module with flush_handlers argument as one of the tasks.
+		        - name: running notified handlers
+		          meta: flush_handlers
+		5. In their own namespace. (You can't notify a playbooks handler from inside a role and vice versa)
+	
+	Handlers will execute based on the above rules each time for pre_tasks, tasks and post_tasks.
+		1. pre_tasks
+		2.   handlers
+		3. roles
+		4. tasks
+		5.   handlers
+		6. post_tasks
+		7.   handlers
+
 	
 Extras
 ======
