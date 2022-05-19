@@ -190,6 +190,7 @@ Playbook Syntax
 		- name: <TASK_NAME>                 │
 		  <SAME-AS-TASK-SECTION>            │
 	      when: <CONDITION_LIST>                │
+	      tags: <TAG_LIST>                      │
 	      become: true|FALSE                ────┘ # block can only use conditions but not loop
 
 	    - name: <TASK NAME>

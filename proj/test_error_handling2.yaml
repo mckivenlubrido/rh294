@@ -31,6 +31,8 @@
         - name: A2
           debug:
             msg: Always 2
+      tags:
+        - hello
 #     when: .....some condition
 
     - name: T3

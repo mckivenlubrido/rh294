@@ -1,0 +1,32 @@
+---
+- name: Testing external task file
+  hosts: localhost
+  tasks:
+    - name: T1
+      debug:
+        msg: Task 1
+
+    - name: INCLUDE the external tasks file
+      vars:
+        my_param: "{{ item }}"
+      include_tasks: tasks/my_tasks.yaml
+      loop:
+        - abc
+        - def
+        - ghi
+
+    - name: T3
+      debug:
+        msg: Task 3
+      changed_when: true
+      tags:
+        - testing
+        - asdf
+        
+    - name: IMPORT external task file
+      vars:
+        my_param: "THIS IS IMPORT"
+      import_tasks: tasks/my_tasks.yaml
+      tags:
+        - always
+...

@@ -1,0 +1,23 @@
+---
+# Sample playbook to help generate hosts files to be deployed for services, etc.
+- name: Testing Jinja and modules
+  hosts:
+    - localhost
+    - serverb
+  tasks:
+    - name: T1
+      template:
+        src: hosts.j2
+        dest: dummy
+      when: inventory_hostname == 'localhost'
+
+    - name: T2
+      template:
+        src: httpd.conf.j2
+        dest: /tmp/h.conf
+      when: inventory_hostname == 'serverb'
+
+    - name: T3
+      debug:
+        msg: Task 3
+...

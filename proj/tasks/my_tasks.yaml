@@ -1,0 +1,8 @@
+- name: TA
+  debug:
+    msg: Task A with {{ my_param }}
+
+- name: TB
+  debug:
+    msg: Task B
+

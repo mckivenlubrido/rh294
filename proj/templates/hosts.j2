@@ -1,0 +1,22 @@
+TITLE: Testing jinja2
+=====================
+Report generated for: {{ inventory_hostname }}
+
+{# for VARIABLE in LIST [CONDITION] #}
+{# endfor #}
+Members of group "all":
+{% for my_var in groups['all'] if my_var not in ['monkey', 'hacked'] %}
+	{{ my_var }}
+{% endfor %}
+
+{# if CONDITION #}
+{# else #}
+{# endif #}
+{% if inventory_hostname == 'monkey' %}
+YAY FOR MONKEY
+{% else %}
+YAY FOR EVERYONE
+{% endif %}
+
+
+{{ hostvars.servera | to_nice_yaml }}
