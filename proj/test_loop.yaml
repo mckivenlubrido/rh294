@@ -1,0 +1,32 @@
+---
+- name: Testing loops
+  hosts: localhost
+  tasks:
+    - name: T1
+      debug:
+        msg: "{{ item.name }} and {{ item.age }}"
+      loop:
+        - name: one
+          age: 123
+        - name: two 
+          age: 1
+        - name: three
+          age: 12
+
+    - name: T2
+      debug:
+        msg:
+          - one
+          - two
+          - three
+
+    - name: T3
+      vars:
+        my_list:
+          name: albert
+          age: 123
+          gender: F
+      debug:
+        msg: "{{ item.key }} holds the value {{ item.value }}"
+      loop: "{{ lookup('dict', my_list) }}"
+...

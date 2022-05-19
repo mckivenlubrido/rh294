@@ -1,0 +1,29 @@
+---
+- name: Testing When
+  hosts: nodes
+  tasks:
+    - block:
+        - name: T1a
+          debug:
+            msg: Webserver operations
+    
+        - name: T1b
+          debug:
+            msg: Webserver operations
+      when: inventory_hostname in groups['webservers']
+
+    - name: T2
+      debug:
+        msg: DB Server operations
+      when: inventory_hostname in groups.dbservers
+
+    - name: T3
+      set_fact:
+        abc: 123
+      when: inventory_hostname == "serverd"
+
+    - name: only display message if abc exists
+      debug:
+        msg: YAY!!! you have abc
+      when: abc is defined
+...

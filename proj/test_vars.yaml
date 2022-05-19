@@ -4,7 +4,11 @@
   vars:
     value1: Hello World
     message: 123
+  gather_facts: false
   tasks:
+    - name: get facts
+      setup:
+
     - name: T1 {{ value1 }}
       debug:
         msg: Task 1 with message as {{ message }}
@@ -23,4 +27,24 @@
         msg:
           - message in T3 is {{ message }}
           - address is {{ address }}
+
+    - name: Run cmd
+      vars:
+        dir_name: dummy
+      command: ls /
+      register: cmd_result
+      changed_when: "dir_name in cmd_result.stdout_lines" 
+
+    - name: display result of command
+      debug:
+        msg: There were changes
+      when: cmd_result.changed
+
+    - name: testing lookup vars
+      vars:
+        no_localhost_name: Hello World      
+      debug:
+        msg: the value of your item is {{ lookup('vars', 'no_' + inventory_hostname + '_name') }}
+
+
 ...
