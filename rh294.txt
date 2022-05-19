@@ -175,6 +175,7 @@ Playbook Syntax
 	      changed_when: <CONDITION_LIST>        │
 	      loop: <CONDITION_LIST>                │
 	      notify: <HANDLER_LIST>                │
+	      become: true|FALSE                    │
 	      delegate_to: <HOST_NAME>              │
 	      delegate_facts: true|FALSE            │
 	      tags: <TAG_LIST>                  ────┘
@@ -188,7 +189,8 @@ Playbook Syntax
 	      always:                               │
 		- name: <TASK_NAME>                 │
 		  <SAME-AS-TASK-SECTION>            │
-	      when: <CONDITION_LIST>            ────┘ # block can only use conditions but not loop
+	      when: <CONDITION_LIST>                │
+	      become: true|FALSE                ────┘ # block can only use conditions but not loop
 
 	    - name: <TASK NAME>
 	      <SAME-AS-TASK-SECTION>
@@ -200,6 +202,7 @@ Playbook Syntax
 	  handlers:
 	    - name: <HANDLER_NAME>
 	      <SAME-AS-TASK-SECTION>
+	      listen: <HANDLER_NAME>      # an alternate handler name can be written here as well
 
 	- name: <PLAY NAME>
 	  hosts: <HOSTS_LIST>

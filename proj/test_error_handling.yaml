@@ -1,0 +1,20 @@
+---
+- name: Testing Error Handling
+  hosts: localhost
+  tasks:
+    - name: T1
+      debug:
+        msg: Task 1
+
+    - name: T2
+      command: ls  ansible.cfg
+      #ignore_errors: true
+      register: cmd_result
+      failed_when: cmd_result.rc not in [ 0, 2 ]
+      changed_when: cmd_result.rc == 2
+
+#    - name: T3
+#      debug:
+#        var: cmd_result
+#      when: cmd_result.changed
+...
