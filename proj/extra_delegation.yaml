@@ -1,0 +1,17 @@
+---
+- name: Generate a list of hosts
+  hosts: nodes
+  tasks:
+    - name: Create and populate gen_hosts file on localhost
+      lineinfile:
+        path: files/gen_hosts
+        line: "{{ ansible_default_ipv4.address }}\t{{ ansible_fqdn }}\t{{ ansible_hostname }}"
+        create: true
+      delegate_to: localhost
+
+    - name: Copy gen_hosts file to webservers
+      copy:
+        src: gen_hosts
+        dest: /tmp/my_hosts
+      when: inventory_hostname in groups['webservers']
+...
