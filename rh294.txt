@@ -40,9 +40,9 @@ Config
 	Sample ansible.cfg
 	------------------
 	[defaults]
-	inventory         = ./hosts
-	roles_path        = ./roles
-	log_path          = ./logs/report.log
+	inventory         = ./hosts		# file/dir
+	roles_path        = ./roles		# dir
+	log_path          = ./logs/report.log	# file
 	remote_user       = devops
 	ask_pass          = False		# true|False
 	host_key_checking = False		# True|false
@@ -237,8 +237,39 @@ HANDLERS
 Extras
 ======
 	Ansible Config Settings - https://docs.ansible.com/ansible/latest/reference_appendices/config.html
-	Playbook Keywords - https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html
-	Playbook Filters  - https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html
+	Playbook Keywords       - https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html
+	Playbook Filters        - https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html
+	Jinja2                  - https://jinja.palletsprojects.com/en/3.1.x/templates/
+
+	forks  -> number of ssh sessions to spawn per TASK
+	       -> set using the -f option or "forks" setting in the defaults section of ansible.cfg
+	serial -> execute whole PLAY for SERIAL number of nodes
+	       -> set in playbook at play level
+
+Jinja2
+======
+	Delimeters:
+		{% ... %} - statements
+		{{ ... }} - expressions to generate as output
+		{# ... #} - comments not included in output
+
+	Conditional Statements:
+		{% if CONDITION %}
+		...
+		{% else %}
+		...
+		{% endif %}
+
+	Loops:
+		{% for VAR in LIST %}
+		{% if CONDITION %}
+		...
+		{% endif %}
+		{% endfor %}
+
+		{% for VAR in LIST [if CONDITION] %}
+		...
+		{% endfor %}
 
 vi settings
 ===========

@@ -1,0 +1,16 @@
+---
+- name: Reboot node
+  hosts: servera
+  tasks:
+    - name: T1
+      debug:
+        msg: Task 1
+
+    - name: T2
+      reboot:
+      become: true
+
+    - name: T3
+      debug:
+        msg: Task 3
+...

@@ -233,3 +233,489 @@
     - This is serverb.lab.example.com, ansible_fqdn is servera.lab.example.com and inventory_hostname is servera
 2022-05-19 23:48:46,084 p=7413 u=student n=ansible | PLAY RECAP ********************************************************************************************
 2022-05-19 23:48:46,084 p=7413 u=student n=ansible | servera                    : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 00:02:18,005 p=7748 u=student n=ansible | PLAY [Reboot node] ************************************************************************************
+2022-05-20 00:02:18,016 p=7748 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-20 00:02:19,296 p=7748 u=student n=ansible | ok: [servera]
+2022-05-20 00:02:19,305 p=7748 u=student n=ansible | TASK [T1] *********************************************************************************************
+2022-05-20 00:02:19,336 p=7748 u=student n=ansible | ok: [servera] => 
+  msg: Task 1
+2022-05-20 00:02:19,347 p=7748 u=student n=ansible | TASK [T2] *********************************************************************************************
+2022-05-20 00:02:20,567 p=7748 u=student n=ansible | fatal: [servera]: FAILED! => changed=false 
+  elapsed: 0
+  msg: |-
+    Reboot command failed. Error was Failed to set wall message, ignoring: Interactive authentication required.
+    Failed to call ScheduleShutdown in logind, proceeding with immediate shutdown: Interactive authentication required., Shared connection to servera closed.
+  rebooted: false
+  start: 2022-05-20 04:02:20.534077
+2022-05-20 00:02:20,569 p=7748 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-20 00:02:20,569 p=7748 u=student n=ansible | servera                    : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-20 00:02:55,777 p=7802 u=student n=ansible | PLAY [Reboot node] ************************************************************************************
+2022-05-20 00:02:55,788 p=7802 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-20 00:02:56,893 p=7802 u=student n=ansible | ok: [servera]
+2022-05-20 00:02:56,903 p=7802 u=student n=ansible | TASK [T1] *********************************************************************************************
+2022-05-20 00:02:56,928 p=7802 u=student n=ansible | ok: [servera] => 
+  msg: Task 1
+2022-05-20 00:02:56,936 p=7802 u=student n=ansible | TASK [T2] *********************************************************************************************
+2022-05-20 00:02:58,077 p=7802 u=student n=ansible | fatal: [servera]: FAILED! => changed=false 
+  elapsed: 0
+  msg: |-
+    Reboot command failed. Error was Failed to set wall message, ignoring: Interactive authentication required.
+    Failed to call ScheduleShutdown in logind, proceeding with immediate shutdown: Interactive authentication required., Shared connection to servera closed.
+  rebooted: false
+  start: 2022-05-20 04:02:58.045632
+2022-05-20 00:02:58,078 p=7802 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-20 00:02:58,078 p=7802 u=student n=ansible | servera                    : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-20 00:03:36,515 p=7868 u=student n=ansible | PLAY [Reboot node] ************************************************************************************
+2022-05-20 00:03:36,525 p=7868 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-20 00:03:37,531 p=7868 u=student n=ansible | ok: [servera]
+2022-05-20 00:03:37,540 p=7868 u=student n=ansible | TASK [T1] *********************************************************************************************
+2022-05-20 00:03:37,567 p=7868 u=student n=ansible | ok: [servera] => 
+  msg: Task 1
+2022-05-20 00:03:37,575 p=7868 u=student n=ansible | TASK [T2] *********************************************************************************************
+2022-05-20 00:03:38,779 p=7868 u=student n=ansible | fatal: [servera]: FAILED! => changed=false 
+  elapsed: 0
+  msg: |-
+    Reboot command failed. Error was Failed to set wall message, ignoring: Interactive authentication required.
+    Failed to call ScheduleShutdown in logind, proceeding with immediate shutdown: Interactive authentication required., Shared connection to servera closed.
+  rebooted: false
+  start: 2022-05-20 04:03:38.747123
+2022-05-20 00:03:38,779 p=7868 u=student n=ansible | ...ignoring
+2022-05-20 00:03:38,787 p=7868 u=student n=ansible | TASK [T3] *********************************************************************************************
+2022-05-20 00:03:38,814 p=7868 u=student n=ansible | ok: [servera] => 
+  msg: Task 3
+2022-05-20 00:03:38,816 p=7868 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-20 00:03:38,816 p=7868 u=student n=ansible | servera                    : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2022-05-20 00:04:03,079 p=7918 u=student n=ansible | PLAY [Reboot node] ************************************************************************************
+2022-05-20 00:04:03,088 p=7918 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-20 00:04:04,090 p=7918 u=student n=ansible | ok: [servera]
+2022-05-20 00:04:04,099 p=7918 u=student n=ansible | TASK [T1] *********************************************************************************************
+2022-05-20 00:04:04,115 p=7918 u=student n=ansible | ok: [servera] => 
+  msg: Task 1
+2022-05-20 00:04:04,123 p=7918 u=student n=ansible | TASK [T2] *********************************************************************************************
+2022-05-20 00:04:05,273 p=7918 u=student n=ansible | fatal: [servera]: FAILED! => changed=false 
+  elapsed: 0
+  msg: |-
+    Reboot command failed. Error was Failed to set wall message, ignoring: Interactive authentication required.
+    Failed to call ScheduleShutdown in logind, proceeding with immediate shutdown: Interactive authentication required., Shared connection to servera closed.
+  rebooted: false
+  start: 2022-05-20 04:04:05.242196
+2022-05-20 00:04:05,273 p=7918 u=student n=ansible | ...ignoring
+2022-05-20 00:04:05,280 p=7918 u=student n=ansible | TASK [T3] *********************************************************************************************
+2022-05-20 00:04:05,294 p=7918 u=student n=ansible | ok: [servera] => 
+  msg: Task 3
+2022-05-20 00:04:05,307 p=7918 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-20 00:04:05,307 p=7918 u=student n=ansible | servera                    : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2022-05-20 00:04:36,091 p=7976 u=student n=ansible | PLAY [Reboot node] ************************************************************************************
+2022-05-20 00:04:36,101 p=7976 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-20 00:04:37,116 p=7976 u=student n=ansible | ok: [servera]
+2022-05-20 00:04:37,125 p=7976 u=student n=ansible | TASK [T1] *********************************************************************************************
+2022-05-20 00:04:37,148 p=7976 u=student n=ansible | ok: [servera] => 
+  msg: Task 1
+2022-05-20 00:04:37,156 p=7976 u=student n=ansible | TASK [T2] *********************************************************************************************
+2022-05-20 00:05:59,562 p=7976 u=student n=ansible | changed: [servera]
+2022-05-20 00:05:59,571 p=7976 u=student n=ansible | TASK [T3] *********************************************************************************************
+2022-05-20 00:05:59,587 p=7976 u=student n=ansible | ok: [servera] => 
+  msg: Task 3
+2022-05-20 00:05:59,599 p=7976 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-20 00:05:59,599 p=7976 u=student n=ansible | servera                    : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 01:28:53,483 p=8878 u=student n=ansible | localhost | FAILED! => {
+    "msg": "The task includes an option with an undefined variable. The error was: the inline if-expression on line 1 evaluated to false and no else section was defined."
+}
+2022-05-20 01:29:11,205 p=8892 u=student n=ansible | localhost | FAILED! => {
+    "msg": "template error while templating string: no test named 'definedi'. String: {{'hi' if abc is definedi else 'def'}}"
+}
+2022-05-20 01:29:43,575 p=8915 u=student n=ansible | localhost | FAILED! => {
+    "msg": "template error while templating string: no test named 'definedi'. String: {{'hi' if abc is definedi else 'def'}}"
+}
+2022-05-20 01:30:58,780 p=8985 u=student n=ansible | PLAY [Testing Jinja] **********************************************************************************
+2022-05-20 01:30:58,789 p=8985 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-20 01:30:59,569 p=8985 u=student n=ansible | ok: [localhost]
+2022-05-20 01:30:59,577 p=8985 u=student n=ansible | TASK [T1] *********************************************************************************************
+2022-05-20 01:30:59,613 p=8985 u=student n=ansible | fatal: [localhost]: FAILED! => 
+  msg: |-
+    The task includes an option with an undefined variable. The error was: the inline if-expression on line 1 evaluated to false and no else section was defined.
+  
+    The error appears to be in '/home/student/notes/proj/extra_j2.yaml': line 7, column 7, but may
+    be elsewhere in the file depending on the exact syntax problem.
+  
+    The offending line appears to be:
+  
+      tasks:
+        - name: T1
+          ^ here
+2022-05-20 01:30:59,614 p=8985 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-20 01:30:59,614 p=8985 u=student n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-20 01:31:19,386 p=9068 u=student n=ansible | PLAY [Testing Jinja] **********************************************************************************
+2022-05-20 01:31:19,396 p=9068 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-20 01:31:20,212 p=9068 u=student n=ansible | ok: [localhost]
+2022-05-20 01:31:20,221 p=9068 u=student n=ansible | TASK [T1] *********************************************************************************************
+2022-05-20 01:31:20,260 p=9068 u=student n=ansible | ok: [localhost] => 
+  msg: hi
+2022-05-20 01:31:20,262 p=9068 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-20 01:31:20,262 p=9068 u=student n=ansible | localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 01:31:30,040 p=9136 u=student n=ansible | localhost | SUCCESS => {
+    "msg": "def"
+}
+2022-05-20 01:31:54,275 p=9150 u=student n=ansible | localhost | FAILED! => {
+    "msg": "The task includes an option with an undefined variable. The error was: the inline if-expression on line 1 evaluated to false and no else section was defined."
+}
+2022-05-20 01:49:19,427 p=9321 u=student n=ansible | localhost | SUCCESS => {
+    "msg": "1"
+}
+2022-05-20 01:50:09,450 p=9335 u=student n=ansible | localhost | SUCCESS => {
+    "msg": "12"
+}
+2022-05-20 01:50:36,804 p=9357 u=student n=ansible | localhost | SUCCESS => {
+    "msg": "12"
+}
+2022-05-20 01:51:08,026 p=9376 u=student n=ansible | localhost | SUCCESS => {
+    "msg": "12"
+}
+2022-05-20 01:51:14,702 p=9390 u=student n=ansible | localhost | SUCCESS => {
+    "msg": "12"
+}
+2022-05-20 01:51:24,771 p=9412 u=student n=ansible | localhost | SUCCESS => {
+    "msg": true
+}
+2022-05-20 01:51:43,120 p=9426 u=student n=ansible | localhost | SUCCESS => {
+    "msg": false
+}
+2022-05-20 01:51:55,592 p=9440 u=student n=ansible | localhost | FAILED! => {
+    "msg": "Unexpected templating type error occurred on ({{ value1 + 2 }}): must be str, not int"
+}
+2022-05-20 01:52:31,027 p=9462 u=student n=ansible | localhost | SUCCESS => {
+    "msg": "3"
+}
+2022-05-20 01:54:16,845 p=9484 u=student n=ansible | localhost | FAILED! => {
+    "msg": "template error while templating string: expected token 'end of print statement', got 'even'. String: {{ (value1 + '2')| is even }}"
+}
+2022-05-20 01:54:38,550 p=9506 u=student n=ansible | localhost | FAILED! => {
+    "msg": "Unexpected templating type error occurred on ({{ (value1 + '2') is even }}): not all arguments converted during string formatting"
+}
+2022-05-20 01:55:23,223 p=9528 u=student n=ansible | localhost | SUCCESS => {
+    "msg": "2"
+}
+2022-05-20 01:55:43,122 p=9542 u=student n=ansible | localhost | SUCCESS => {
+    "msg": false
+}
+2022-05-20 02:05:07,057 p=9696 u=student n=ansible | servera | SUCCESS => {
+    "group_names": [
+        "another_group",
+        "nodes",
+        "webservers"
+    ]
+}
+2022-05-20 02:05:18,264 p=9719 u=student n=ansible | servera | SUCCESS => {
+    "group_names": [
+        "another_group",
+        "nodes",
+        "webservers"
+    ]
+}
+2022-05-20 02:05:26,007 p=9740 u=student n=ansible | servera | SUCCESS => {
+    "group_names|to_yaml": "[another_group, nodes, webservers]\n"
+}
+2022-05-20 02:05:36,488 p=9755 u=student n=ansible | servera | SUCCESS => {
+    "group_names|to_nice_yaml": "- another_group\n- nodes\n- webservers\n"
+}
+2022-05-20 02:05:57,706 p=9770 u=student n=ansible | servera | SUCCESS => {
+    "group_names": [
+        "another_group",
+        "nodes",
+        "webservers"
+    ]
+}
+2022-05-20 02:06:06,109 p=9785 u=student n=ansible | serverc | SUCCESS => {
+    "group_names": [
+        "dbservers",
+        "nodes"
+    ]
+}
+2022-05-20 02:10:48,512 p=9921 u=student n=ansible | PLAY [Testing Jinja] **********************************************************************************
+2022-05-20 02:10:48,524 p=9921 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-20 02:10:49,425 p=9921 u=student n=ansible | ok: [localhost]
+2022-05-20 02:10:49,434 p=9921 u=student n=ansible | TASK [T1] *********************************************************************************************
+2022-05-20 02:10:49,471 p=9921 u=student n=ansible | ok: [localhost] => 
+  msg: hi
+2022-05-20 02:10:49,481 p=9921 u=student n=ansible | TASK [Copy index.html.j2 to home directory as data.txt] ***********************************************
+2022-05-20 02:10:50,130 p=9921 u=student n=ansible | changed: [localhost]
+2022-05-20 02:10:50,131 p=9921 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-20 02:10:50,132 p=9921 u=student n=ansible | localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:11:09,059 p=10015 u=student n=ansible | serverc | FAILED | rc=1 >>
+cat: data.txt: No such file or directorynon-zero return code
+
+2022-05-20 02:11:09,063 p=10015 u=student n=ansible | serverd | FAILED | rc=1 >>
+cat: data.txt: No such file or directorynon-zero return code
+
+2022-05-20 02:11:09,082 p=10015 u=student n=ansible | serverb | FAILED | rc=1 >>
+cat: data.txt: No such file or directorynon-zero return code
+
+2022-05-20 02:11:09,086 p=10015 u=student n=ansible | servera | FAILED | rc=1 >>
+cat: data.txt: No such file or directorynon-zero return code
+
+2022-05-20 02:11:27,854 p=10099 u=student n=ansible | serverb | CHANGED | rc=0 >>
+
+
+2022-05-20 02:11:27,895 p=10099 u=student n=ansible | serverd | CHANGED | rc=0 >>
+
+
+2022-05-20 02:11:27,900 p=10099 u=student n=ansible | servera | CHANGED | rc=0 >>
+
+
+2022-05-20 02:11:27,904 p=10099 u=student n=ansible | serverc | CHANGED | rc=0 >>
+
+
+2022-05-20 02:12:00,897 p=10166 u=student n=ansible | PLAY [Testing Jinja] **********************************************************************************
+2022-05-20 02:12:00,907 p=10166 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-20 02:12:02,040 p=10166 u=student n=ansible | ok: [serverd]
+2022-05-20 02:12:02,100 p=10166 u=student n=ansible | ok: [serverc]
+2022-05-20 02:12:02,131 p=10166 u=student n=ansible | ok: [servera]
+2022-05-20 02:12:02,135 p=10166 u=student n=ansible | ok: [serverb]
+2022-05-20 02:12:02,144 p=10166 u=student n=ansible | TASK [T1] *********************************************************************************************
+2022-05-20 02:12:02,260 p=10166 u=student n=ansible | ok: [servera] => 
+  msg: hi
+2022-05-20 02:12:02,260 p=10166 u=student n=ansible | ok: [serverb] => 
+  msg: hi
+2022-05-20 02:12:02,273 p=10166 u=student n=ansible | ok: [serverc] => 
+  msg: hi
+2022-05-20 02:12:02,279 p=10166 u=student n=ansible | ok: [serverd] => 
+  msg: hi
+2022-05-20 02:12:02,286 p=10166 u=student n=ansible | TASK [Copy index.html.j2 to home directory as data.txt] ***********************************************
+2022-05-20 02:12:03,293 p=10166 u=student n=ansible | changed: [serverd]
+2022-05-20 02:12:03,298 p=10166 u=student n=ansible | changed: [serverc]
+2022-05-20 02:12:03,332 p=10166 u=student n=ansible | changed: [servera]
+2022-05-20 02:12:03,357 p=10166 u=student n=ansible | changed: [serverb]
+2022-05-20 02:12:03,361 p=10166 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-20 02:12:03,361 p=10166 u=student n=ansible | servera                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:12:03,361 p=10166 u=student n=ansible | serverb                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:12:03,361 p=10166 u=student n=ansible | serverc                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:12:03,361 p=10166 u=student n=ansible | serverd                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:12:08,392 p=10295 u=student n=ansible | servera | CHANGED | rc=0 >>
+data.txt
+
+2022-05-20 02:12:08,411 p=10295 u=student n=ansible | serverd | CHANGED | rc=0 >>
+data.txt
+
+2022-05-20 02:12:08,441 p=10295 u=student n=ansible | serverb | CHANGED | rc=0 >>
+data.txt
+
+2022-05-20 02:12:08,461 p=10295 u=student n=ansible | serverc | CHANGED | rc=0 >>
+data.txt
+
+2022-05-20 02:12:12,817 p=10355 u=student n=ansible | serverd | CHANGED | rc=0 >>
+Welcome to Group:
+Database Servers
+
+2022-05-20 02:12:12,821 p=10355 u=student n=ansible | serverb | CHANGED | rc=0 >>
+Welcome to Group:
+	Web Servers
+
+2022-05-20 02:12:12,841 p=10355 u=student n=ansible | serverc | CHANGED | rc=0 >>
+Welcome to Group:
+Database Servers
+
+2022-05-20 02:12:12,896 p=10355 u=student n=ansible | servera | CHANGED | rc=0 >>
+Welcome to Group:
+	Web Servers
+
+2022-05-20 02:14:30,525 p=10479 u=student n=ansible | PLAY [Testing Jinja] **********************************************************************************
+2022-05-20 02:14:30,535 p=10479 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-20 02:14:31,933 p=10479 u=student n=ansible | ok: [serverd]
+2022-05-20 02:14:31,938 p=10479 u=student n=ansible | ok: [serverc]
+2022-05-20 02:14:31,940 p=10479 u=student n=ansible | ok: [serverb]
+2022-05-20 02:14:31,945 p=10479 u=student n=ansible | ok: [servera]
+2022-05-20 02:14:31,955 p=10479 u=student n=ansible | TASK [T1] *********************************************************************************************
+2022-05-20 02:14:32,061 p=10479 u=student n=ansible | ok: [servera] => 
+  msg: hi
+2022-05-20 02:14:32,062 p=10479 u=student n=ansible | ok: [serverb] => 
+  msg: hi
+2022-05-20 02:14:32,068 p=10479 u=student n=ansible | ok: [serverc] => 
+  msg: hi
+2022-05-20 02:14:32,099 p=10479 u=student n=ansible | ok: [serverd] => 
+  msg: hi
+2022-05-20 02:14:32,107 p=10479 u=student n=ansible | TASK [Copy index.html.j2 to home directory as data.txt] ***********************************************
+2022-05-20 02:14:33,075 p=10479 u=student n=ansible | ok: [serverd]
+2022-05-20 02:14:33,109 p=10479 u=student n=ansible | ok: [serverc]
+2022-05-20 02:14:33,178 p=10479 u=student n=ansible | changed: [servera]
+2022-05-20 02:14:33,178 p=10479 u=student n=ansible | changed: [serverb]
+2022-05-20 02:14:33,180 p=10479 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-20 02:14:33,181 p=10479 u=student n=ansible | servera                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:14:33,181 p=10479 u=student n=ansible | serverb                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:14:33,181 p=10479 u=student n=ansible | serverc                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:14:33,181 p=10479 u=student n=ansible | serverd                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:14:39,342 p=10618 u=student n=ansible | serverd | CHANGED | rc=0 >>
+Welcome to Group:
+Database Servers
+
+2022-05-20 02:14:39,344 p=10618 u=student n=ansible | serverb | CHANGED | rc=0 >>
+Welcome to Group:
+Web Servers
+
+2022-05-20 02:14:39,354 p=10618 u=student n=ansible | serverc | CHANGED | rc=0 >>
+Welcome to Group:
+Database Servers
+
+2022-05-20 02:14:39,359 p=10618 u=student n=ansible | servera | CHANGED | rc=0 >>
+Welcome to Group:
+Web Servers
+
+2022-05-20 02:23:47,629 p=10790 u=student n=ansible | PLAY [Testing Jinja] **********************************************************************************
+2022-05-20 02:23:47,640 p=10790 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-20 02:23:48,975 p=10790 u=student n=ansible | ok: [serverd]
+2022-05-20 02:23:48,991 p=10790 u=student n=ansible | ok: [servera]
+2022-05-20 02:23:48,994 p=10790 u=student n=ansible | ok: [serverc]
+2022-05-20 02:23:49,033 p=10790 u=student n=ansible | ok: [serverb]
+2022-05-20 02:23:49,043 p=10790 u=student n=ansible | TASK [T1] *********************************************************************************************
+2022-05-20 02:23:49,133 p=10790 u=student n=ansible | ok: [serverb] => 
+  msg: hi
+2022-05-20 02:23:49,148 p=10790 u=student n=ansible | ok: [servera] => 
+  msg: hi
+2022-05-20 02:23:49,162 p=10790 u=student n=ansible | ok: [serverc] => 
+  msg: hi
+2022-05-20 02:23:49,163 p=10790 u=student n=ansible | ok: [serverd] => 
+  msg: hi
+2022-05-20 02:23:49,170 p=10790 u=student n=ansible | TASK [Copy index.html.j2 to home directory as data.txt] ***********************************************
+2022-05-20 02:23:50,094 p=10790 u=student n=ansible | ok: [servera]
+2022-05-20 02:23:50,122 p=10790 u=student n=ansible | ok: [serverd]
+2022-05-20 02:23:50,127 p=10790 u=student n=ansible | ok: [serverc]
+2022-05-20 02:23:50,143 p=10790 u=student n=ansible | ok: [serverb]
+2022-05-20 02:23:50,148 p=10790 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-20 02:23:50,149 p=10790 u=student n=ansible | servera                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:23:50,149 p=10790 u=student n=ansible | serverb                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:23:50,149 p=10790 u=student n=ansible | serverc                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:23:50,149 p=10790 u=student n=ansible | serverd                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:24:05,296 p=10923 u=student n=ansible | PLAY [Testing Jinja] **********************************************************************************
+2022-05-20 02:24:05,306 p=10923 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-20 02:24:06,418 p=10923 u=student n=ansible | ok: [serverc]
+2022-05-20 02:24:06,425 p=10923 u=student n=ansible | ok: [servera]
+2022-05-20 02:24:06,458 p=10923 u=student n=ansible | ok: [serverd]
+2022-05-20 02:24:06,498 p=10923 u=student n=ansible | ok: [serverb]
+2022-05-20 02:24:06,509 p=10923 u=student n=ansible | TASK [T1] *********************************************************************************************
+2022-05-20 02:24:06,590 p=10923 u=student n=ansible | ok: [serverb] => 
+  msg: '1000'
+2022-05-20 02:24:06,602 p=10923 u=student n=ansible | ok: [servera] => 
+  msg: '1000'
+2022-05-20 02:24:06,606 p=10923 u=student n=ansible | ok: [serverc] => 
+  msg: '1000'
+2022-05-20 02:24:06,614 p=10923 u=student n=ansible | ok: [serverd] => 
+  msg: '1000'
+2022-05-20 02:24:06,621 p=10923 u=student n=ansible | TASK [Copy index.html.j2 to home directory as data.txt] ***********************************************
+2022-05-20 02:24:07,548 p=10923 u=student n=ansible | ok: [serverc]
+2022-05-20 02:24:07,553 p=10923 u=student n=ansible | ok: [servera]
+2022-05-20 02:24:07,558 p=10923 u=student n=ansible | ok: [serverb]
+2022-05-20 02:24:07,558 p=10923 u=student n=ansible | ok: [serverd]
+2022-05-20 02:24:07,565 p=10923 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-20 02:24:07,565 p=10923 u=student n=ansible | servera                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:24:07,565 p=10923 u=student n=ansible | serverb                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:24:07,565 p=10923 u=student n=ansible | serverc                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:24:07,565 p=10923 u=student n=ansible | serverd                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:25:07,125 p=11055 u=student n=ansible | PLAY [Testing Jinja] **********************************************************************************
+2022-05-20 02:25:07,134 p=11055 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-20 02:25:08,529 p=11055 u=student n=ansible | ok: [serverb]
+2022-05-20 02:25:08,533 p=11055 u=student n=ansible | ok: [serverc]
+2022-05-20 02:25:08,537 p=11055 u=student n=ansible | ok: [serverd]
+2022-05-20 02:25:08,551 p=11055 u=student n=ansible | ok: [servera]
+2022-05-20 02:25:08,570 p=11055 u=student n=ansible | TASK [T1] *********************************************************************************************
+2022-05-20 02:25:08,656 p=11055 u=student n=ansible | ok: [serverb] => 
+  msg: '1000'
+2022-05-20 02:25:08,685 p=11055 u=student n=ansible | ok: [serverd] => 
+  msg: '1000'
+2022-05-20 02:25:08,689 p=11055 u=student n=ansible | ok: [servera] => 
+  msg: '1000'
+2022-05-20 02:25:08,709 p=11055 u=student n=ansible | ok: [serverc] => 
+  msg: '1000'
+2022-05-20 02:25:08,728 p=11055 u=student n=ansible | TASK [Copy index.html.j2 to home directory as data.txt] ***********************************************
+2022-05-20 02:25:09,693 p=11055 u=student n=ansible | ok: [serverb]
+2022-05-20 02:25:09,694 p=11055 u=student n=ansible | ok: [servera]
+2022-05-20 02:25:09,706 p=11055 u=student n=ansible | ok: [serverd]
+2022-05-20 02:25:09,715 p=11055 u=student n=ansible | ok: [serverc]
+2022-05-20 02:25:09,717 p=11055 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-20 02:25:09,717 p=11055 u=student n=ansible | servera                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:25:09,717 p=11055 u=student n=ansible | serverb                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:25:09,717 p=11055 u=student n=ansible | serverc                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:25:09,717 p=11055 u=student n=ansible | serverd                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:25:14,027 p=11188 u=student n=ansible | PLAY [Testing Jinja] **********************************************************************************
+2022-05-20 02:25:14,037 p=11188 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-20 02:25:15,137 p=11188 u=student n=ansible | ok: [serverd]
+2022-05-20 02:25:15,154 p=11188 u=student n=ansible | ok: [servera]
+2022-05-20 02:25:15,160 p=11188 u=student n=ansible | ok: [serverc]
+2022-05-20 02:25:15,197 p=11188 u=student n=ansible | ok: [serverb]
+2022-05-20 02:25:15,206 p=11188 u=student n=ansible | TASK [T1] *********************************************************************************************
+2022-05-20 02:25:15,277 p=11188 u=student n=ansible | ok: [servera] => 
+  msg: hi
+2022-05-20 02:25:15,293 p=11188 u=student n=ansible | ok: [serverc] => 
+  msg: hi
+2022-05-20 02:25:15,296 p=11188 u=student n=ansible | ok: [serverb] => 
+  msg: hi
+2022-05-20 02:25:15,322 p=11188 u=student n=ansible | ok: [serverd] => 
+  msg: hi
+2022-05-20 02:25:15,329 p=11188 u=student n=ansible | TASK [Copy index.html.j2 to home directory as data.txt] ***********************************************
+2022-05-20 02:25:16,302 p=11188 u=student n=ansible | ok: [serverc]
+2022-05-20 02:25:16,305 p=11188 u=student n=ansible | ok: [serverd]
+2022-05-20 02:25:16,312 p=11188 u=student n=ansible | ok: [serverb]
+2022-05-20 02:25:16,313 p=11188 u=student n=ansible | ok: [servera]
+2022-05-20 02:25:16,315 p=11188 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-20 02:25:16,315 p=11188 u=student n=ansible | servera                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:25:16,315 p=11188 u=student n=ansible | serverb                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:25:16,315 p=11188 u=student n=ansible | serverc                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:25:16,315 p=11188 u=student n=ansible | serverd                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:30:56,296 p=11380 u=student n=ansible | PLAY [Testing Jinja] **********************************************************************************
+2022-05-20 02:30:56,306 p=11380 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-20 02:30:57,638 p=11380 u=student n=ansible | ok: [serverd]
+2022-05-20 02:30:57,696 p=11380 u=student n=ansible | ok: [serverc]
+2022-05-20 02:30:57,701 p=11380 u=student n=ansible | ok: [servera]
+2022-05-20 02:30:57,710 p=11380 u=student n=ansible | ok: [serverb]
+2022-05-20 02:30:57,725 p=11380 u=student n=ansible | TASK [T1] *********************************************************************************************
+2022-05-20 02:30:57,820 p=11380 u=student n=ansible | ok: [serverc] => 
+  msg: hi
+2022-05-20 02:30:57,833 p=11380 u=student n=ansible | ok: [serverb] => 
+  msg: hi
+2022-05-20 02:30:57,834 p=11380 u=student n=ansible | ok: [serverd] => 
+  msg: hi
+2022-05-20 02:30:57,836 p=11380 u=student n=ansible | ok: [servera] => 
+  msg: hi
+2022-05-20 02:30:57,843 p=11380 u=student n=ansible | TASK [Copy index.html.j2 to home directory as data.txt] ***********************************************
+2022-05-20 02:30:58,780 p=11380 u=student n=ansible | ok: [serverd]
+2022-05-20 02:30:58,784 p=11380 u=student n=ansible | ok: [servera]
+2022-05-20 02:30:58,817 p=11380 u=student n=ansible | ok: [serverc]
+2022-05-20 02:30:58,835 p=11380 u=student n=ansible | ok: [serverb]
+2022-05-20 02:30:58,842 p=11380 u=student n=ansible | TASK [another template] *******************************************************************************
+2022-05-20 02:30:58,948 p=11380 u=student n=ansible | skipping: [serverd]
+2022-05-20 02:30:58,959 p=11380 u=student n=ansible | skipping: [serverb]
+2022-05-20 02:30:59,688 p=11380 u=student n=ansible | changed: [servera]
+2022-05-20 02:30:59,698 p=11380 u=student n=ansible | changed: [serverc]
+2022-05-20 02:30:59,703 p=11380 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-20 02:30:59,703 p=11380 u=student n=ansible | servera                    : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:30:59,703 p=11380 u=student n=ansible | serverb                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2022-05-20 02:30:59,703 p=11380 u=student n=ansible | serverc                    : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:30:59,703 p=11380 u=student n=ansible | serverd                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2022-05-20 02:32:29,328 p=11598 u=student n=ansible | PLAY [Testing Jinja] **********************************************************************************
+2022-05-20 02:32:29,337 p=11598 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-20 02:32:30,732 p=11598 u=student n=ansible | ok: [serverd]
+2022-05-20 02:32:30,738 p=11598 u=student n=ansible | ok: [serverb]
+2022-05-20 02:32:30,761 p=11598 u=student n=ansible | ok: [serverc]
+2022-05-20 02:32:30,783 p=11598 u=student n=ansible | ok: [servera]
+2022-05-20 02:32:30,795 p=11598 u=student n=ansible | TASK [T1] *********************************************************************************************
+2022-05-20 02:32:30,901 p=11598 u=student n=ansible | ok: [servera] => 
+  msg: hi
+2022-05-20 02:32:30,902 p=11598 u=student n=ansible | ok: [serverc] => 
+  msg: hi
+2022-05-20 02:32:30,907 p=11598 u=student n=ansible | ok: [serverd] => 
+  msg: hi
+2022-05-20 02:32:30,915 p=11598 u=student n=ansible | ok: [serverb] => 
+  msg: hi
+2022-05-20 02:32:30,923 p=11598 u=student n=ansible | TASK [Copy index.html.j2 to home directory as data.txt] ***********************************************
+2022-05-20 02:32:31,919 p=11598 u=student n=ansible | ok: [servera]
+2022-05-20 02:32:31,939 p=11598 u=student n=ansible | ok: [serverc]
+2022-05-20 02:32:31,955 p=11598 u=student n=ansible | ok: [serverb]
+2022-05-20 02:32:31,960 p=11598 u=student n=ansible | ok: [serverd]
+2022-05-20 02:32:31,971 p=11598 u=student n=ansible | TASK [another template] *******************************************************************************
+2022-05-20 02:32:32,109 p=11598 u=student n=ansible | skipping: [serverb]
+2022-05-20 02:32:32,140 p=11598 u=student n=ansible | skipping: [serverd]
+2022-05-20 02:32:32,924 p=11598 u=student n=ansible | changed: [serverc]
+2022-05-20 02:32:32,935 p=11598 u=student n=ansible | changed: [servera]
+2022-05-20 02:32:32,937 p=11598 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-20 02:32:32,938 p=11598 u=student n=ansible | servera                    : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:32:32,938 p=11598 u=student n=ansible | serverb                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2022-05-20 02:32:32,938 p=11598 u=student n=ansible | serverc                    : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-20 02:32:32,938 p=11598 u=student n=ansible | serverd                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   

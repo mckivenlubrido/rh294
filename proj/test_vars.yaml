@@ -5,6 +5,8 @@
     value1: Hello World
     message: 123
   gather_facts: false
+#  vars_files:
+#    - vars/data.yaml
   tasks:
     - name: get facts
       setup:

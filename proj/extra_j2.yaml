@@ -1,0 +1,28 @@
+---
+- name: Testing Jinja
+  hosts: nodes
+  vars:
+    value1: "{{ 1000 if abc is defined else 'hi' }}"
+    data:
+      servera:
+        - one
+        - two
+      serverc:
+        - a
+        - b
+        - c
+  tasks:
+    - name: T1
+      debug:
+        msg: "{{ value1 }}"
+
+    - name: Copy index.html.j2 to home directory as data.txt
+      template:
+        src: index.html.j2
+        dest: data.txt
+
+    - name: another template
+      template:
+        src: list.j2
+        dest: list.txt
+      when: data[inventory_hostname] is defined

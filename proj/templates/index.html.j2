@@ -1,0 +1,6 @@
+Welcome to Group:
+{% if 'webservers' in group_names -%}	{# {% if inventory_hostname in groups['webservers'] %}  #}
+Web Servers
+{% else %}
+Database Servers
+{% endif %}
