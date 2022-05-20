@@ -1,0 +1,13 @@
+- name: Using flexible parameter
+  debug:
+    msg: "public parameter: {{ public_param }}"
+
+- name: Using internal param
+  debug:
+    msg: "Internal variable: {{ private_param }}"
+
+
+- name: copy some file
+  copy:
+    src: myfile.cfg
+    dest: /tmp/myfile.cfg

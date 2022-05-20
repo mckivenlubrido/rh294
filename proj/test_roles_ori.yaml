@@ -1,0 +1,14 @@
+---
+- name: Testing Roles
+  hosts: localhost
+  vars:
+    public_param: FOR YOU TO CHANGE
+    private_param: INTERNAL USAGE
+  tasks:
+    - name: Using flexible parameter
+      debug:
+        msg: "public parameter: {{ public_param }}"
+
+    - name: Using internal param
+      debug:
+        msg: "Internal variable: {{ private_param }}"

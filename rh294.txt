@@ -26,7 +26,7 @@ Command Syntax:
 
 	ansible-vault create|edit|encrypt|decrypt|view|rekey [--vault-password-file PASSFILE] FILENAME
 
-	ansible-galaxy init|install ROLE_NAME
+	ansible-galaxy role|collection init|install ROLE_NAME
 
 Config
 ======

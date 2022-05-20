@@ -1,0 +1,4 @@
+- name: testing git
+  hosts: servera
+  roles:
+    - geerlingguy.git

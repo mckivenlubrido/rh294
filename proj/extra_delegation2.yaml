@@ -1,0 +1,17 @@
+---
+- name: Play running on servera 
+  hosts: servera
+  tasks:
+    - name: T1 - servera
+      debug:
+        msg: This is {{ ansible_fqdn }}
+
+    - name: T2 - run this is serverb
+      shell: echo This is `hostname`, ansible_fqdn is {{ ansible_fqdn }} and inventory_hostname is {{ inventory_hostname }}
+      delegate_to: serverb
+      register: sh_result
+
+    - name: T3 - servera again. show result of T2
+      debug:
+        var: sh_result
+...

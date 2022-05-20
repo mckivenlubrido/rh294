@@ -1,0 +1,235 @@
+2022-05-19 23:27:20,935 p=6889 u=student n=ansible | PLAY [Testing Variables] ******************************************************************************
+2022-05-19 23:27:20,944 p=6889 u=student n=ansible | TASK [get facts] **************************************************************************************
+2022-05-19 23:27:22,702 p=6889 u=student n=ansible | ok: [localhost]
+2022-05-19 23:27:22,727 p=6889 u=student n=ansible | TASK [T1 Hello World] *********************************************************************************
+2022-05-19 23:27:22,745 p=6889 u=student n=ansible | ok: [localhost] => 
+  msg: Task 1 with message as 123
+2022-05-19 23:27:22,753 p=6889 u=student n=ansible | TASK [Include variables from file] ********************************************************************
+2022-05-19 23:27:22,768 p=6889 u=student n=ansible | ok: [localhost]
+2022-05-19 23:27:22,774 p=6889 u=student n=ansible | TASK [T2] *********************************************************************************************
+2022-05-19 23:27:22,789 p=6889 u=student n=ansible | ok: [localhost] => 
+  msg: message in T2 is IN VARS FILE
+2022-05-19 23:27:22,795 p=6889 u=student n=ansible | TASK [T3] *********************************************************************************************
+2022-05-19 23:27:22,814 p=6889 u=student n=ansible | ok: [localhost] => 
+  msg:
+  - message in T3 is IN VARS FILE
+  - |-
+    address is 1, Jalan 2,
+    Taman abc,
+    12345, mycountry.
+2022-05-19 23:27:22,821 p=6889 u=student n=ansible | TASK [Run cmd] ****************************************************************************************
+2022-05-19 23:27:23,097 p=6889 u=student n=ansible | ok: [localhost]
+2022-05-19 23:27:23,104 p=6889 u=student n=ansible | TASK [display result of command] **********************************************************************
+2022-05-19 23:27:23,126 p=6889 u=student n=ansible | skipping: [localhost]
+2022-05-19 23:27:23,133 p=6889 u=student n=ansible | TASK [testing lookup vars] ****************************************************************************
+2022-05-19 23:27:23,162 p=6889 u=student n=ansible | ok: [localhost] => 
+  msg: the value of your item is Hello World
+2022-05-19 23:27:23,165 p=6889 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-19 23:27:23,165 p=6889 u=student n=ansible | localhost                  : ok=7    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2022-05-19 23:29:30,009 p=7020 u=student n=ansible | ansible-playbook 2.9.21
+  config file = /home/student/notes/proj/ansible.cfg
+  configured module search path = ['/home/student/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3.6/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]
+2022-05-19 23:29:30,009 p=7020 u=student n=ansible | Using /home/student/notes/proj/ansible.cfg as config file
+2022-05-19 23:29:30,009 p=7020 u=student n=ansible | setting up inventory plugins
+2022-05-19 23:29:30,016 p=7020 u=student n=ansible | host_list declined parsing /home/student/notes/proj/hosts/0groups as it did not pass its verify_file() method
+2022-05-19 23:29:30,016 p=7020 u=student n=ansible | script declined parsing /home/student/notes/proj/hosts/0groups as it did not pass its verify_file() method
+2022-05-19 23:29:30,016 p=7020 u=student n=ansible | auto declined parsing /home/student/notes/proj/hosts/0groups as it did not pass its verify_file() method
+2022-05-19 23:29:30,019 p=7020 u=student n=ansible | Parsed /home/student/notes/proj/hosts/0groups inventory source with ini plugin
+2022-05-19 23:29:30,019 p=7020 u=student n=ansible | setting up inventory plugins
+2022-05-19 23:29:30,020 p=7020 u=student n=ansible | host_list declined parsing /home/student/notes/proj/hosts/dbservers as it did not pass its verify_file() method
+2022-05-19 23:29:30,020 p=7020 u=student n=ansible | script declined parsing /home/student/notes/proj/hosts/dbservers as it did not pass its verify_file() method
+2022-05-19 23:29:30,020 p=7020 u=student n=ansible | auto declined parsing /home/student/notes/proj/hosts/dbservers as it did not pass its verify_file() method
+2022-05-19 23:29:30,021 p=7020 u=student n=ansible | Parsed /home/student/notes/proj/hosts/dbservers inventory source with ini plugin
+2022-05-19 23:29:30,021 p=7020 u=student n=ansible | setting up inventory plugins
+2022-05-19 23:29:30,021 p=7020 u=student n=ansible | host_list declined parsing /home/student/notes/proj/hosts/extra as it did not pass its verify_file() method
+2022-05-19 23:29:30,021 p=7020 u=student n=ansible | script declined parsing /home/student/notes/proj/hosts/extra as it did not pass its verify_file() method
+2022-05-19 23:29:30,021 p=7020 u=student n=ansible | auto declined parsing /home/student/notes/proj/hosts/extra as it did not pass its verify_file() method
+2022-05-19 23:29:30,022 p=7020 u=student n=ansible | Parsed /home/student/notes/proj/hosts/extra inventory source with ini plugin
+2022-05-19 23:29:30,023 p=7020 u=student n=ansible | setting up inventory plugins
+2022-05-19 23:29:30,023 p=7020 u=student n=ansible | host_list declined parsing /home/student/notes/proj/hosts/nodes as it did not pass its verify_file() method
+2022-05-19 23:29:30,023 p=7020 u=student n=ansible | script declined parsing /home/student/notes/proj/hosts/nodes as it did not pass its verify_file() method
+2022-05-19 23:29:30,023 p=7020 u=student n=ansible | auto declined parsing /home/student/notes/proj/hosts/nodes as it did not pass its verify_file() method
+2022-05-19 23:29:30,024 p=7020 u=student n=ansible | Parsed /home/student/notes/proj/hosts/nodes inventory source with ini plugin
+2022-05-19 23:29:30,024 p=7020 u=student n=ansible | setting up inventory plugins
+2022-05-19 23:29:30,024 p=7020 u=student n=ansible | host_list declined parsing /home/student/notes/proj/hosts/tmp_list as it did not pass its verify_file() method
+2022-05-19 23:29:30,024 p=7020 u=student n=ansible | script declined parsing /home/student/notes/proj/hosts/tmp_list as it did not pass its verify_file() method
+2022-05-19 23:29:30,024 p=7020 u=student n=ansible | auto declined parsing /home/student/notes/proj/hosts/tmp_list as it did not pass its verify_file() method
+2022-05-19 23:29:30,025 p=7020 u=student n=ansible | Parsed /home/student/notes/proj/hosts/tmp_list inventory source with ini plugin
+2022-05-19 23:29:30,025 p=7020 u=student n=ansible | setting up inventory plugins
+2022-05-19 23:29:30,025 p=7020 u=student n=ansible | host_list declined parsing /home/student/notes/proj/hosts/webservers as it did not pass its verify_file() method
+2022-05-19 23:29:30,025 p=7020 u=student n=ansible | script declined parsing /home/student/notes/proj/hosts/webservers as it did not pass its verify_file() method
+2022-05-19 23:29:30,025 p=7020 u=student n=ansible | auto declined parsing /home/student/notes/proj/hosts/webservers as it did not pass its verify_file() method
+2022-05-19 23:29:30,026 p=7020 u=student n=ansible | Parsed /home/student/notes/proj/hosts/webservers inventory source with ini plugin
+2022-05-19 23:29:30,248 p=7020 u=student n=ansible | Loading callback plugin yaml of type stdout, v2.0 from /usr/lib/python3.6/site-packages/ansible/plugins/callback/yaml.py
+2022-05-19 23:29:30,295 p=7020 u=student n=ansible | Skipping callback 'actionable', as we already have a stdout callback.
+2022-05-19 23:29:30,295 p=7020 u=student n=ansible | Skipping callback 'counter_enabled', as we already have a stdout callback.
+2022-05-19 23:29:30,296 p=7020 u=student n=ansible | Skipping callback 'debug', as we already have a stdout callback.
+2022-05-19 23:29:30,296 p=7020 u=student n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2022-05-19 23:29:30,296 p=7020 u=student n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2022-05-19 23:29:30,296 p=7020 u=student n=ansible | Skipping callback 'full_skip', as we already have a stdout callback.
+2022-05-19 23:29:30,296 p=7020 u=student n=ansible | Skipping callback 'json', as we already have a stdout callback.
+2022-05-19 23:29:30,296 p=7020 u=student n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2022-05-19 23:29:30,296 p=7020 u=student n=ansible | Skipping callback 'null', as we already have a stdout callback.
+2022-05-19 23:29:30,296 p=7020 u=student n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2022-05-19 23:29:30,296 p=7020 u=student n=ansible | Skipping callback 'selective', as we already have a stdout callback.
+2022-05-19 23:29:30,296 p=7020 u=student n=ansible | Skipping callback 'skippy', as we already have a stdout callback.
+2022-05-19 23:29:30,296 p=7020 u=student n=ansible | Skipping callback 'stderr', as we already have a stdout callback.
+2022-05-19 23:29:30,296 p=7020 u=student n=ansible | Skipping callback 'unixy', as we already have a stdout callback.
+2022-05-19 23:29:30,296 p=7020 u=student n=ansible | Skipping callback 'yaml', as we already have a stdout callback.
+2022-05-19 23:29:30,296 p=7020 u=student n=ansible | PLAYBOOK: test_vars.yaml ******************************************************************************
+2022-05-19 23:29:30,297 p=7020 u=student n=ansible | 1 plays in test_vars.yaml
+2022-05-19 23:29:30,299 p=7020 u=student n=ansible | PLAY [Testing Variables] ******************************************************************************
+2022-05-19 23:29:30,305 p=7020 u=student n=ansible | META: ran handlers
+2022-05-19 23:29:30,309 p=7020 u=student n=ansible | TASK [get facts] **************************************************************************************
+2022-05-19 23:29:30,325 p=7026 u=student n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: student
+2022-05-19 23:29:30,325 p=7026 u=student n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~student && sleep 0'
+2022-05-19 23:29:30,332 p=7026 u=student n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1653017370.332512-7026-107305749048129 `" && echo ansible-tmp-1653017370.332512-7026-107305749048129="` echo /home/student/.ansible/tmp/ansible-tmp-1653017370.332512-7026-107305749048129 `" ) && sleep 0'
+2022-05-19 23:29:30,642 p=7026 u=student n=ansible | Using module file /usr/lib/python3.6/site-packages/ansible/modules/system/setup.py
+2022-05-19 23:29:30,643 p=7026 u=student n=ansible | <127.0.0.1> PUT /home/student/.ansible/tmp/ansible-local-7020hlw11xfv/tmp3ue4__iz TO /home/student/.ansible/tmp/ansible-tmp-1653017370.332512-7026-107305749048129/AnsiballZ_setup.py
+2022-05-19 23:29:30,644 p=7026 u=student n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1653017370.332512-7026-107305749048129/ /home/student/.ansible/tmp/ansible-tmp-1653017370.332512-7026-107305749048129/AnsiballZ_setup.py && sleep 0'
+2022-05-19 23:29:30,652 p=7026 u=student n=ansible | <127.0.0.1> EXEC /bin/sh -c '/usr/libexec/platform-python /home/student/.ansible/tmp/ansible-tmp-1653017370.332512-7026-107305749048129/AnsiballZ_setup.py && sleep 0'
+2022-05-19 23:29:31,169 p=7026 u=student n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1653017370.332512-7026-107305749048129/ > /dev/null 2>&1 && sleep 0'
+2022-05-19 23:29:31,205 p=7020 u=student n=ansible | ok: [localhost]
+2022-05-19 23:29:31,239 p=7020 u=student n=ansible | TASK [T1 Hello World] *********************************************************************************
+2022-05-19 23:29:31,260 p=7020 u=student n=ansible | ok: [localhost] => 
+  msg: Task 1 with message as 123
+2022-05-19 23:29:31,267 p=7020 u=student n=ansible | TASK [Include variables from file] ********************************************************************
+2022-05-19 23:29:31,285 p=7020 u=student n=ansible | ok: [localhost] => changed=false 
+  ansible_facts:
+    address: |-
+      1, Jalan 2,
+      Taman abc,
+      12345, mycountry.
+    long_line: |-
+      one two three four five six seven eight
+    message: IN VARS FILE
+  ansible_included_var_files:
+  - /home/student/notes/proj/vars/data.yaml
+2022-05-19 23:29:31,291 p=7020 u=student n=ansible | TASK [T2] *********************************************************************************************
+2022-05-19 23:29:31,316 p=7020 u=student n=ansible | ok: [localhost] => 
+  msg: message in T2 is IN VARS FILE
+2022-05-19 23:29:31,323 p=7020 u=student n=ansible | TASK [T3] *********************************************************************************************
+2022-05-19 23:29:31,344 p=7020 u=student n=ansible | ok: [localhost] => 
+  msg:
+  - message in T3 is IN VARS FILE
+  - |-
+    address is 1, Jalan 2,
+    Taman abc,
+    12345, mycountry.
+2022-05-19 23:29:31,351 p=7020 u=student n=ansible | TASK [Run cmd] ****************************************************************************************
+2022-05-19 23:29:31,365 p=7087 u=student n=ansible | <127.0.0.1> ESTABLISH LOCAL CONNECTION FOR USER: student
+2022-05-19 23:29:31,365 p=7087 u=student n=ansible | <127.0.0.1> EXEC /bin/sh -c 'echo ~student && sleep 0'
+2022-05-19 23:29:31,371 p=7087 u=student n=ansible | <127.0.0.1> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/student/.ansible/tmp `"&& mkdir "` echo /home/student/.ansible/tmp/ansible-tmp-1653017371.3712192-7087-98174383309018 `" && echo ansible-tmp-1653017371.3712192-7087-98174383309018="` echo /home/student/.ansible/tmp/ansible-tmp-1653017371.3712192-7087-98174383309018 `" ) && sleep 0'
+2022-05-19 23:29:31,453 p=7087 u=student n=ansible | Using module file /usr/lib/python3.6/site-packages/ansible/modules/commands/command.py
+2022-05-19 23:29:31,454 p=7087 u=student n=ansible | <127.0.0.1> PUT /home/student/.ansible/tmp/ansible-local-7020hlw11xfv/tmpx1dpo1na TO /home/student/.ansible/tmp/ansible-tmp-1653017371.3712192-7087-98174383309018/AnsiballZ_command.py
+2022-05-19 23:29:31,454 p=7087 u=student n=ansible | <127.0.0.1> EXEC /bin/sh -c 'chmod u+x /home/student/.ansible/tmp/ansible-tmp-1653017371.3712192-7087-98174383309018/ /home/student/.ansible/tmp/ansible-tmp-1653017371.3712192-7087-98174383309018/AnsiballZ_command.py && sleep 0'
+2022-05-19 23:29:31,461 p=7087 u=student n=ansible | <127.0.0.1> EXEC /bin/sh -c '/usr/libexec/platform-python /home/student/.ansible/tmp/ansible-tmp-1653017371.3712192-7087-98174383309018/AnsiballZ_command.py && sleep 0'
+2022-05-19 23:29:31,622 p=7087 u=student n=ansible | <127.0.0.1> EXEC /bin/sh -c 'rm -f -r /home/student/.ansible/tmp/ansible-tmp-1653017371.3712192-7087-98174383309018/ > /dev/null 2>&1 && sleep 0'
+2022-05-19 23:29:31,640 p=7020 u=student n=ansible | ok: [localhost] => changed=false 
+  cmd:
+  - ls
+  - /
+  delta: '0:00:00.003870'
+  end: '2022-05-19 23:29:31.607275'
+  invocation:
+    module_args:
+      _raw_params: ls /
+      _uses_shell: false
+      argv: null
+      chdir: null
+      creates: null
+      executable: null
+      removes: null
+      stdin: null
+      stdin_add_newline: true
+      strip_empty_ends: true
+      warn: true
+  rc: 0
+  start: '2022-05-19 23:29:31.603405'
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: |-
+    bin
+    boot
+    dev
+    etc
+    home
+    lib
+    lib64
+    media
+    mnt
+    opt
+    proc
+    root
+    run
+    sbin
+    srv
+    sys
+    tmp
+    usr
+    var
+  stdout_lines: <omitted>
+2022-05-19 23:29:31,647 p=7020 u=student n=ansible | TASK [display result of command] **********************************************************************
+2022-05-19 23:29:31,664 p=7020 u=student n=ansible | skipping: [localhost] => 
+2022-05-19 23:29:31,672 p=7020 u=student n=ansible | TASK [testing lookup vars] ****************************************************************************
+2022-05-19 23:29:31,701 p=7020 u=student n=ansible | ok: [localhost] => 
+  msg: the value of your item is Hello World
+2022-05-19 23:29:31,701 p=7020 u=student n=ansible | META: ran handlers
+2022-05-19 23:29:31,702 p=7020 u=student n=ansible | META: ran handlers
+2022-05-19 23:29:31,702 p=7020 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-19 23:29:31,703 p=7020 u=student n=ansible | localhost                  : ok=7    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2022-05-19 23:32:02,944 p=7148 u=student n=ansible | PLAY [Testing When] ***********************************************************************************
+2022-05-19 23:32:02,953 p=7148 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-19 23:32:04,374 p=7148 u=student n=ansible | ok: [serverd]
+2022-05-19 23:32:04,385 p=7148 u=student n=ansible | TASK [T1a] ********************************************************************************************
+2022-05-19 23:32:04,421 p=7148 u=student n=ansible | skipping: [serverd]
+2022-05-19 23:32:04,442 p=7148 u=student n=ansible | TASK [T1b] ********************************************************************************************
+2022-05-19 23:32:04,499 p=7148 u=student n=ansible | skipping: [serverd]
+2022-05-19 23:32:04,506 p=7148 u=student n=ansible | TASK [T2] *********************************************************************************************
+2022-05-19 23:32:04,563 p=7148 u=student n=ansible | ok: [serverd] => 
+  msg: DB Server operations
+2022-05-19 23:32:04,571 p=7148 u=student n=ansible | TASK [T3] *********************************************************************************************
+2022-05-19 23:32:04,626 p=7148 u=student n=ansible | ok: [serverd]
+2022-05-19 23:32:04,633 p=7148 u=student n=ansible | TASK [only display message if abc exists] *************************************************************
+2022-05-19 23:32:04,672 p=7148 u=student n=ansible | ok: [serverd] => 
+  msg: YAY!!! you have abc
+2022-05-19 23:32:04,674 p=7148 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-19 23:32:04,674 p=7148 u=student n=ansible | serverd                    : ok=4    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2022-05-19 23:32:40,847 p=7194 u=student n=ansible | PLAY [Testing When] ***********************************************************************************
+2022-05-19 23:32:40,858 p=7194 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-19 23:32:41,929 p=7194 u=student n=ansible | ok: [serverd]
+2022-05-19 23:32:41,936 p=7194 u=student n=ansible | TASK [T3] *********************************************************************************************
+2022-05-19 23:32:41,975 p=7194 u=student n=ansible | ok: [serverd]
+2022-05-19 23:32:41,982 p=7194 u=student n=ansible | TASK [only display message if abc exists] *************************************************************
+2022-05-19 23:32:42,023 p=7194 u=student n=ansible | ok: [serverd] => 
+  msg: YAY!!! you have abc
+2022-05-19 23:32:42,026 p=7194 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-19 23:32:42,026 p=7194 u=student n=ansible | serverd                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-19 23:48:43,717 p=7413 u=student n=ansible | PLAY [Play running on servera] ************************************************************************
+2022-05-19 23:48:43,727 p=7413 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************
+2022-05-19 23:48:45,149 p=7413 u=student n=ansible | ok: [servera]
+2022-05-19 23:48:45,158 p=7413 u=student n=ansible | TASK [T1 - servera] ***********************************************************************************
+2022-05-19 23:48:45,196 p=7413 u=student n=ansible | ok: [servera] => 
+  msg: This is servera.lab.example.com
+2022-05-19 23:48:45,208 p=7413 u=student n=ansible | TASK [T2 - run this is serverb] ***********************************************************************
+2022-05-19 23:48:46,016 p=7413 u=student n=ansible | changed: [servera -> serverb]
+2022-05-19 23:48:46,025 p=7413 u=student n=ansible | TASK [T3 - servera again. show result of T2] **********************************************************
+2022-05-19 23:48:46,069 p=7413 u=student n=ansible | ok: [servera] => 
+  sh_result:
+    changed: true
+    cmd: echo This is `hostname`, ansible_fqdn is servera.lab.example.com and inventory_hostname is servera
+    delta: '0:00:00.006768'
+    end: '2022-05-19 23:48:45.970628'
+    failed: false
+    rc: 0
+    start: '2022-05-19 23:48:45.963860'
+    stderr: ''
+    stderr_lines: []
+    stdout: This is serverb.lab.example.com, ansible_fqdn is servera.lab.example.com and inventory_hostname is servera
+    stdout_lines:
+    - This is serverb.lab.example.com, ansible_fqdn is servera.lab.example.com and inventory_hostname is servera
+2022-05-19 23:48:46,084 p=7413 u=student n=ansible | PLAY RECAP ********************************************************************************************
+2022-05-19 23:48:46,084 p=7413 u=student n=ansible | servera                    : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

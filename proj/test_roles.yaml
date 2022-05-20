@@ -1,0 +1,20 @@
+---
+- name: Testing Roles
+  hosts: localhost
+#  pre_tasks:
+#    - name: Pre1
+#      debug:
+#        msg: Pre Task 1
+  roles:
+    - { role: simple, public_param: HELLO WORLD }
+    - { role: simple, public_param: USING VARS }
+    - role: simple
+      public_param: Final Usage
+  tasks:
+    - name: T1
+      debug:
+        msg: Task 1
+
+#    - name: Run Role
+#      import_role:
+#        name: simple
