@@ -719,3 +719,345 @@ Web Servers
 2022-05-20 02:32:32,938 p=11598 u=student n=ansible | serverb                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
 2022-05-20 02:32:32,938 p=11598 u=student n=ansible | serverc                    : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2022-05-20 02:32:32,938 p=11598 u=student n=ansible | serverd                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2022-05-20 02:56:13,803 p=12491 u=student n=ansible | {
+    "_meta": {
+        "hostvars": {
+            "hacked": {
+                "value1": "hahahaha"
+            },
+            "monkey": {
+                "ansible_connection": "localhost"
+            },
+            "servera": {
+                "value1": "ALMIGHTY"
+            }
+        }
+    },
+    "all": {
+        "children": [
+            "another_group",
+            "nodes",
+            "ungrouped"
+        ]
+    },
+    "another_group": {
+        "hosts": [
+            "servera"
+        ]
+    },
+    "dbservers": {
+        "hosts": [
+            "serverc",
+            "serverd"
+        ]
+    },
+    "nodes": {
+        "children": [
+            "dbservers",
+            "webservers"
+        ]
+    },
+    "ungrouped": {
+        "hosts": [
+            "hacked",
+            "monkey"
+        ]
+    },
+    "webservers": {
+        "hosts": [
+            "servera",
+            "serverb"
+        ]
+    }
+}
+2022-05-20 02:56:34,518 p=12508 u=student n=ansible | {
+    "value1": "ALMIGHTY"
+}
+2022-05-20 03:09:03,701 p=13158 u=student n=ansible | {
+    "_meta": {
+        "hostvars": {
+            "hacked": {
+                "value1": "hahahaha"
+            },
+            "monkey": {
+                "ansible_connection": "localhost"
+            },
+            "servera": {
+                "value1": "ALMIGHTY"
+            }
+        }
+    },
+    "all": {
+        "children": [
+            "another_group",
+            "nodes",
+            "ungrouped"
+        ]
+    },
+    "another_group": {
+        "hosts": [
+            "servera"
+        ]
+    },
+    "dbservers": {
+        "hosts": [
+            "serverc",
+            "serverd"
+        ]
+    },
+    "nodes": {
+        "children": [
+            "dbservers",
+            "webservers"
+        ]
+    },
+    "ungrouped": {
+        "hosts": [
+            "hacked",
+            "monkey"
+        ]
+    },
+    "webservers": {
+        "hosts": [
+            "servera",
+            "serverb"
+        ]
+    }
+}
+2022-05-20 04:02:41,848 p=14963 u=student n=ansible | @all:
+  |--@another_group:
+  |  |--servera
+  |--@nodes:
+  |  |--@dbservers:
+  |  |  |--serverc
+  |  |  |--serverd
+  |  |--@webservers:
+  |  |  |--servera
+  |  |  |--serverb
+  |--@ungrouped:
+  |  |--hacked
+  |  |--monkey
+2022-05-20 04:02:50,447 p=14971 u=student n=ansible | {
+    "_meta": {
+        "hostvars": {
+            "hacked": {
+                "value1": "hahahaha"
+            },
+            "monkey": {
+                "ansible_connection": "localhost"
+            },
+            "servera": {
+                "value1": "ALMIGHTY"
+            }
+        }
+    },
+    "all": {
+        "children": [
+            "another_group",
+            "nodes",
+            "ungrouped"
+        ]
+    },
+    "another_group": {
+        "hosts": [
+            "servera"
+        ]
+    },
+    "dbservers": {
+        "hosts": [
+            "serverc",
+            "serverd"
+        ]
+    },
+    "nodes": {
+        "children": [
+            "dbservers",
+            "webservers"
+        ]
+    },
+    "ungrouped": {
+        "hosts": [
+            "hacked",
+            "monkey"
+        ]
+    },
+    "webservers": {
+        "hosts": [
+            "servera",
+            "serverb"
+        ]
+    }
+}
+2022-05-20 04:07:55,953 p=15173 u=student n=ansible | @all:
+  |--@another_group:
+  |  |--servera
+  |--@nodes:
+  |  |--@dbservers:
+  |  |  |--serverc
+  |  |  |--serverd
+  |  |--@webservers:
+  |  |  |--servera
+  |  |  |--serverb
+  |--@ungrouped:
+  |  |--hacked
+  |  |--monkey
+2022-05-20 04:08:02,813 p=15181 u=student n=ansible | {
+    "_meta": {
+        "hostvars": {
+            "hacked": {
+                "value1": "hahahaha"
+            },
+            "monkey": {
+                "ansible_connection": "localhost"
+            },
+            "servera": {
+                "value1": "ALMIGHTY"
+            }
+        }
+    },
+    "all": {
+        "children": [
+            "another_group",
+            "nodes",
+            "ungrouped"
+        ]
+    },
+    "another_group": {
+        "hosts": [
+            "servera"
+        ]
+    },
+    "dbservers": {
+        "hosts": [
+            "serverc",
+            "serverd"
+        ]
+    },
+    "nodes": {
+        "children": [
+            "dbservers",
+            "webservers"
+        ]
+    },
+    "ungrouped": {
+        "hosts": [
+            "hacked",
+            "monkey"
+        ]
+    },
+    "webservers": {
+        "hosts": [
+            "servera",
+            "serverb"
+        ]
+    }
+}
+2022-05-20 04:08:23,302 p=15197 u=student n=ansible | {
+    "_meta": {
+        "hostvars": {
+            "hacked": {
+                "value1": "hahahaha"
+            },
+            "monkey": {
+                "ansible_connection": "localhost"
+            },
+            "servera": {
+                "value1": "ALMIGHTY"
+            }
+        }
+    },
+    "all": {
+        "children": [
+            "another_group",
+            "nodes",
+            "ungrouped"
+        ]
+    },
+    "another_group": {
+        "hosts": [
+            "servera"
+        ]
+    },
+    "dbservers": {
+        "hosts": [
+            "serverc",
+            "serverd"
+        ]
+    },
+    "nodes": {
+        "children": [
+            "dbservers",
+            "webservers"
+        ]
+    },
+    "ungrouped": {
+        "hosts": [
+            "hacked",
+            "monkey"
+        ]
+    },
+    "webservers": {
+        "hosts": [
+            "servera",
+            "serverb"
+        ]
+    }
+}
+2022-05-20 04:24:17,258 p=15746 u=student n=ansible | {
+    "value1": "ALMIGHTY"
+}
+2022-05-20 04:24:34,433 p=15763 u=student n=ansible | {}
+2022-05-20 04:24:46,021 p=15771 u=student n=ansible | {
+    "_meta": {
+        "hostvars": {
+            "hacked": {
+                "value1": "hahahaha"
+            },
+            "monkey": {
+                "ansible_connection": "localhost"
+            },
+            "servera": {
+                "value1": "ALMIGHTY"
+            }
+        }
+    },
+    "all": {
+        "children": [
+            "another_group",
+            "nodes",
+            "ungrouped"
+        ]
+    },
+    "another_group": {
+        "hosts": [
+            "servera"
+        ]
+    },
+    "dbservers": {
+        "hosts": [
+            "serverc",
+            "serverd"
+        ]
+    },
+    "nodes": {
+        "children": [
+            "dbservers",
+            "webservers"
+        ]
+    },
+    "ungrouped": {
+        "hosts": [
+            "hacked",
+            "monkey"
+        ]
+    },
+    "webservers": {
+        "hosts": [
+            "servera",
+            "serverb"
+        ]
+    }
+}
+2022-05-20 04:25:03,166 p=15779 u=student n=ansible | {
+    "ansible_connection": "localhost"
+}

@@ -1,0 +1,8 @@
+---
+- name: Testing dynamic hosts
+  hosts: "{{ host_list | default('group1') }}"
+  tasks:
+    - name: T1
+      debug:
+        msg: Task 1
+...
