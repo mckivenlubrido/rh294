@@ -1,0 +1,14 @@
+- name: User of application
+  debug:
+    msg: The user is {{ username }}
+    
+- name: Internal Operation
+  debug:
+    msg: I am going to run internally for {{ counter }} times.
+    
+- name: Copy template for config
+  become: true
+  template:
+    src: templates/httpd.conf.j2
+    dest: /usr/local/etc/abc.cfg
+

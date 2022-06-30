@@ -1,0 +1,40 @@
+---
+- name: Testing Loops
+  hosts: servera
+  vars:
+    my_list:
+      - one
+      - two
+      - three
+  tasks:
+    - name: Simple Loop 1
+      debug:
+        msg: Your item is {{ item }}
+      with_items:                             # newer versions of ansible uses loop:
+        - abc
+        - def
+        - ghi
+
+    - name: What is the difference?
+      debug:
+        msg:
+          - abc
+          - def
+          - ghi
+
+    - name: Simple Loop 2
+      debug:
+        msg: Item is {{ item }}
+      loop: "{{ my_list }}"
+
+    - name: List of Hashes
+      vars:
+        data:
+          - name: one
+            age: 2
+          - name: two
+            age: 3
+      debug:
+        msg: "{{ item.name }} is {{ item['age'] }} years old"
+      loop: "{{ data }}"
+...

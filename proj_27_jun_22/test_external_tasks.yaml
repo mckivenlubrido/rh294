@@ -1,0 +1,26 @@
+---
+- name: Testing External Tasks
+  hosts: servera
+  tasks:
+    - name: Task 1
+      debug:
+        msg: Task 1
+
+    - name: Include Tasks - Dynamic
+      vars:
+        tmp_var: "{{ item }}"
+      include_tasks: tasks/include.yaml
+      loop:
+        - one
+        - two
+        - three
+
+    - name: Import Tasks - Static
+      vars:
+        tmp_var: import content
+      import_tasks: tasks/import.yaml
+
+    - name: Task 3
+      debug:
+        msg: Task 3
+...

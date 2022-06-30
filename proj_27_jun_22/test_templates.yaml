@@ -1,0 +1,22 @@
+---
+- name: Testing Templates
+  hosts: servera
+  vars:
+    username: >
+      {% if doit %}
+      albert
+      {% else %}
+      julie
+      {% endif %}
+    doit: False
+  tasks:
+    - name: Copy file to server
+      vars:
+        my_users:
+          - albert
+          - julie
+          - cindy
+      template:
+        src: templates/abc.cfg.j2
+        dest: /tmp/abc.cfg
+...

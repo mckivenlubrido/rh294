@@ -1,0 +1,40 @@
+---
+- name: Testing Error Handling
+  hosts: servera
+  vars:
+    failit: False
+  tasks:
+    - name: Task 1
+      debug:
+        msg: Task 1
+
+    - block:
+        - name: Task 2a
+          debug:
+            msg: Task 2a
+          failed_when: failit
+    
+        - name: Task 2b
+          debug:
+            msg: Task 2b
+      rescue:
+        - name: Rescue 2a
+          debug:
+            msg: Rescue 2a
+
+        - name: Rescue 2b
+          debug:
+            msg: Rescue 2b
+      always:
+        - name: Always 2a
+          debug:
+            msg: Always 2a
+
+        - name: Always 2b
+          debug:
+            msg: Always 2b
+
+    - name: Task 3
+      debug:
+        msg: Task 3
+...

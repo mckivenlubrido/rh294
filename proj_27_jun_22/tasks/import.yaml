@@ -1,0 +1,7 @@
+- name: Import 1
+  debug:
+    msg: Import 1 with data {{ tmp_var }}
+
+- name: Import 2
+  debug:
+    msg: Import 2

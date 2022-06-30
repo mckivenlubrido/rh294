@@ -1,0 +1,30 @@
+---
+# 1. ignore_errors vs failed_when
+# 2. Writing conditions for when, changed_when, failed_when.
+# 3. Register variables
+
+- name: Testing Conditions
+  hosts:
+    - servera
+    - serverc
+  #ignore_errors: True
+  tasks:
+    - name: Display the value of value1       # serverc doesn't have value1
+      debug:
+        msg: value1 is {{ value1 }}
+      #ignore_errors: True
+      #when: inventory_hostname in groups['webservers']
+      when: "'webservers' in group_names"
+
+    - name: running the command rpm -q httpd
+      command: rpm -q httpd
+      #failed_when: false
+      ignore_errors: true
+      changed_when: "'not installed' in cmd_result.stdout"
+      register: cmd_result
+
+    - name: Display result of previous command
+      debug:
+        msg: The software httpd is installed in {{ inventory_hostname }}
+      when: cmd_result.rc == 0
+...

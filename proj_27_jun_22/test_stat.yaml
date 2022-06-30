@@ -1,0 +1,22 @@
+---
+- name: Testing
+  hosts: servera
+  tasks:
+    - name: stat file
+      stat:
+        path: /tmp/dummy
+      register: stat_result
+
+    - name: Display result
+      debug:
+        var: stat_result
+        verbosity: 1
+
+    - name: Task 3
+      lineinfile:
+        line: some example line
+        path: /tmp/dummy
+      when: 
+        - stat_result.stat.writeable is defined
+        - stat_result.stat.writeable
+...

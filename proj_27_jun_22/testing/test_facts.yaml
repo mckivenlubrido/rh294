@@ -1,0 +1,20 @@
+---
+- name: Testing
+  hosts: servera
+  #gather_facts: false
+  tasks:
+    - name: My facts
+      debug:
+        msg:
+          - My FQDN is {{ ansible_facts['fqdn'] }}          # old name is ansible_fqdn
+          - My hostname is {{ ansible_facts['hostname'] }}  # old name is ansible_hostname
+          - Default interface IP address {{ ansible_facts['default_ipv4']['address'] }}
+
+    - name: Task 2
+      debug:
+        msg: Task 2
+
+    - name: Task 3
+      debug:
+        msg: Task 3
+...

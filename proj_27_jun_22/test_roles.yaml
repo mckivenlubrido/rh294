@@ -1,0 +1,16 @@
+---
+- name: Testing Roles
+  hosts: servera
+  pre_tasks:
+    - name: P1
+      debug: msg="Pre 1"
+
+  roles:
+    - role: simple
+      username: julie
+    - { role: simple, username: abu }
+
+  tasks:
+    - name: T1
+      debug: msg="Task 1"
+...

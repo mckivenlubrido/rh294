@@ -1,0 +1,15 @@
+hello world
+welcome to {{ ansible_facts['fqdn'] }}
+
+The username is: {{ username }}
+
+{% if doit %}
+You are the Greatest
+{% else %}
+This is a new server
+{% endif %}
+
+These users will be added:
+{% for data in my_users if data != 'cindy' %}
+{{ data }}
+{% endfor %}

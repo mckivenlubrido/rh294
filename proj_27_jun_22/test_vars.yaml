@@ -1,0 +1,45 @@
+---
+- name: Testing
+  hosts: servera
+  vars_files:
+    - vars/variable.yaml
+  vars:
+    value1: PLAY LEVEL
+    one:
+      two:
+        three: hello world
+    my_list:
+      - name: item a
+        data: hi
+      - name: item b
+        data: b data
+      - name: item c
+        data: c data
+  tasks:
+    - name: Task 1 - value of value1
+      debug:
+        msg: value1 holds the value {{ value1 }}
+
+    - name: Including variable files using module
+      include_vars:
+        file: include_vars.yaml
+
+    - name: Task 2 - {{ value1 }}
+      vars:
+        value1: IN TASK
+      debug:
+        msg: Task 2
+
+    - name: Task 3
+      debug:
+        msg:
+          - '{{ inventory_hostname }} value1 is {{ value1 }}'
+          - serverb value1 is {{ hostvars['serverb']['value1'] }}
+
+    - name: Last Task
+      debug:
+        msg:
+          - first is {{ one.two.three }} or {{ one['two']['three'] }}
+          - first name is {{ my_list[0].name }} or {{ my_list[0]['name'] }}
+          - third list is {{ my_list[2] }}
+...

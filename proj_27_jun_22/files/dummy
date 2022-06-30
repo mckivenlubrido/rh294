@@ -1,0 +1,4 @@
+hello world
+welcome to {{ ansible_facts['fqdn'] }}
+
+The username is: {{ username }}

@@ -1,0 +1,16 @@
+monkey			ansible_connection=local
+
+[webservers]
+servera			value1=123
+serverb
+
+[webservers:vars]
+value1=GROUP VARS
+
+[dbservers]
+server[c:d]
+
+[nodes:children]
+webservers
+dbservers
+

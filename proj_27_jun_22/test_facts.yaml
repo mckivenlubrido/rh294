@@ -1,0 +1,16 @@
+---
+- name: Testing Facts
+  hosts:
+    - bird
+    - servera
+  tasks:
+    - name: Magic variable inventory_hostname
+      debug:
+        var: inventory_hostname
+
+    - name: FQDN Facts
+      debug:
+        msg: 
+          - "{{ ansible_facts.fqdn }}"
+          - "{{ ansible_facts.hostname }}"
+...

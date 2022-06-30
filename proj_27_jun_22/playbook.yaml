@@ -1,0 +1,46 @@
+---
+- name: Play 1
+  hosts:
+    - servera
+    - serverd
+  tasks:
+    - name: Task 1
+      debug:
+        msg: Task 1
+
+    - name: Running "hostname" command
+      command: hosasdfatname
+      when: inventory_hostname == 'servera'
+
+    - name: Task 3
+      debug:
+        msg: Task 3
+
+- name: Play 2
+  hosts:
+    - servera
+    - serverc
+  tasks:
+    - name: One
+      debug:
+        msg: One
+
+    - debug:
+        msg: Two
+
+    - name: Three
+      debug:
+        msg: Three
+
+
+- name: Play 3
+  hosts: webservers
+  tasks:
+    - name: Task A
+      debug:
+        msg: Task A
+
+    - name: Task B
+      debug:
+        msg: Task B
+...
