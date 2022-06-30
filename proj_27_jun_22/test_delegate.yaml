@@ -1,0 +1,25 @@
+---
+- name: Testing delegation
+  hosts: webservers
+  serial: 1
+  tasks:
+    - name: Task 1
+      debug:
+        msg: This is run on {{ ansible_fqdn }}
+
+    - name: Task 2 run on serverc
+      command: hostname
+      delegate_to: serverc
+      register: cmd_result
+
+    - name: Task 3
+      debug:
+        msg: You are now on {{ inventory_hostname }}. Last command location ({{ cmd_result.stdout }}).
+    - name: Task 4
+      copy:
+        content: |
+          Hello, I've executed the tasks on {{ inventory_hostname }} (Real Name: {{ ansible_fqdn }})
+          The control node was {{ cmd_result.stdout }}
+        dest: reports/data-{{ inventory_hostname }}.txt
+      delegate_to: localhost
+...

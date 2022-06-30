@@ -1,0 +1,2 @@
+Hello, I've executed the tasks on servera (Real Name: servera.lab.example.com)
+The control node was serverc.lab.example.com

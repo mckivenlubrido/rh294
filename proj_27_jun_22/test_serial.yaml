@@ -1,0 +1,21 @@
+---
+- name: Testing serial
+  hosts:
+    - servera
+    - serverb
+    - serverc
+  gather_facts: false
+  serial: 1
+  tasks:
+    - name: Patching
+      debug:
+        msg: Patching
+
+    - name: Rebooting
+      reboot:
+      become: True
+
+    - name: Verifying
+      debug:
+        msg: Verifying
+...
